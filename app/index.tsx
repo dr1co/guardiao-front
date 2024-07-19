@@ -1,5 +1,6 @@
-import { Text, View } from "react-native";
+import { View, StyleSheet } from "react-native";
 import TelaPerfil from "./screens/TelaPerfil";
+
 
 export default function Index() {
   return (
@@ -10,7 +11,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <TelaPerfil/>
+      <TelaPerfil />
     </View>
   );
 }
