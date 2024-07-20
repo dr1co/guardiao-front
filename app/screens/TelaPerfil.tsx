@@ -3,6 +3,7 @@ import Logo from "@/components/Logo";
 import ButtonPerfil from "@/components/CustomButton";
 import Title from "@/components/Title";
 import SubTitle from "@/components/SubTitle";
+import LoadingBar from "@/components/LoadingBar";
 
 export default function TelaPerfil() {
   const { width, height } = useWindowDimensions();
@@ -13,7 +14,8 @@ export default function TelaPerfil() {
       backgroundColor:  "#e2e1ff",
       flex: 1,
       width: width,
-      minHeight: height
+      minHeight: height,
+      alignItems: "center"
     }}>
       <View style={{backgroundColor: "#7b6dd1"}}>
         <Logo/>
@@ -23,6 +25,11 @@ export default function TelaPerfil() {
         <View>
           <Title/>
         </View>
+
+        <View>
+          <LoadingBar/>
+        </View>
+
         <View>
           <SubTitle/>
         </View>
