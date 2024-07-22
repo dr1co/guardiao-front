@@ -1,6 +1,6 @@
 import { View, useWindowDimensions } from "react-native";
 import Logo from "@/components/Logo";
-import ButtonPerfil from "@/components/CustomButton";
+import ButtonPerfil from "@/components/ButtonPerfis";
 import Title from "@/components/Title";
 import SubTitle from "@/components/SubTitle";
 import LoadingBar from "@/components/LoadingBar";
