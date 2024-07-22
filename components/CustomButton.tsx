@@ -6,21 +6,29 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: "#000000",
     padding: 20,
-    borderRadius: 16,
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 20,
+    marginBottom: 40,
+    width: 347, 
+    height: 190, 
+    borderRadius: 50,
+    elevation: 5
   },
 
   title: {
     fontSize: 24,
     color: 'white',
     fontWeight: 'bold',
+    marginBottom: 15,
+    fontFamily: '"B612 Mono", monospace'
   },
 
   text: {
     fontSize: 15,
-    color: 'white'
+    color: 'white',
+    marginTop: 15,
+    textAlign: "center",
+    fontFamily: 'IBM Plex Sans'
   }
 });
 
@@ -36,10 +44,10 @@ const CustomButton = (props: ButtonParameters) => {
   return (
     <View>
       <TouchableOpacity
-        style={{ ...styles.button, backgroundColor: props.backgroundColor,  width: 340, height: 190}}
+        style={{ ...styles.button, backgroundColor: props.backgroundColor}}
       >
         
-        <Text style={styles.text}>{props.title}</Text>
+        <Text style={styles.title}>{props.title}</Text>
         <View style={{height: 1, width: 311, backgroundColor: "white"}}></View>
         <Text style={styles.text}>{props.text}</Text>
       </TouchableOpacity>

@@ -11,17 +11,17 @@ export default function TelaPerfil() {
 
   return (
     <View style={{
-      backgroundColor:  "#e2e1ff",
+      backgroundColor: "#7b6dd1",
       flex: 1,
       width: width,
       minHeight: height,
       alignItems: "center"
     }}>
-      <View style={{backgroundColor: "#7b6dd1"}}>
+      <View style={{backgroundColor: "#7b6dd1", height: 80, marginTop: 15}}>
         <Logo/>
       </View>
 
-      <View style={{backgroundColor: "#e2e1ff"}}>
+      <View style={{backgroundColor: "#e2e1ff", width, height, borderRadius: 50, alignItems: "center"}}>
         <View>
           <Title/>
         </View>

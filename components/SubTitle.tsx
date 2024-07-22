@@ -5,7 +5,7 @@ export default function SubTitle() {
     <View style={{
       marginBottom: 60,
     }}>
-      <Text>Este dispositivo pertence a quem?</Text>
+      <Text style={{fontSize: 20, color: "#888888", fontWeight: "500", fontFamily: 'IBM Plex Sans'}}>Este dispositivo pertence a quem?</Text>
     </View>
   );
 }
