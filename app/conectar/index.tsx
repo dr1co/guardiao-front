@@ -1,7 +1,6 @@
-import { View, useWindowDimensions } from "react-native";
+import { View, useWindowDimensions, Text } from "react-native";
 import Logo from "@/components/Logo";
 import ButtonPerfil from "@/components/ButtonPerfil";
-import Title from "@/components/Title";
 import SubTitle from "@/components/SubTitle";
 import LoadingBar from "@/components/LoadingBar";
 import { Link } from 'expo-router';
@@ -33,8 +32,14 @@ export default function TelaPerfil() {
           alignItems: "center",
         }}
       >
-        <View>
-          <Title />
+        <View style={{
+          marginBottom: 30,
+          marginTop: 60,
+          width: 293,
+          height: 96
+        }}>
+        <Text style={{fontSize: 24, lineHeight: 48, fontFamily: 'IBM Plex Sans', color: "#7b6dd1", fontWeight: "bold"}}>Seu <Text style={{color: "#8093f4", fontFamily: '"B612 Mono", monospace', fontWeight: "bold"}}>Guardião</Text> não foi configurado ainda.</Text>
+
         </View>
 
         <View>

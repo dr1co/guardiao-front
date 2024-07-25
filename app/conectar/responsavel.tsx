@@ -1,8 +1,9 @@
-import { View, useWindowDimensions, Image } from "react-native";
+import { View, useWindowDimensions, Image, Text, TouchableOpacity } from "react-native";
 import Logo from "@/components/Logo";
 import ButtonConfirmar from "@/components/ButtonConfirmar";
-import Title from "@/components/Title";
 import LoadingBar from "@/components/LoadingBar";
+import ButtonBack from "@/components/ButtonBack";
+import InputName from "@/components/InputName";
 
 export default function TelaPerfilResponsavel() {
   const { width, height } = useWindowDimensions();
@@ -34,14 +35,45 @@ export default function TelaPerfilResponsavel() {
           marginTop: 100,
         }}
       >
-        <View>
-          <Title />
+        <View
+          style={{
+            marginBottom: 30,
+            marginTop: 60,
+            width: 293,
+            height: 96,
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <ButtonBack />
+          <Text
+            style={{
+              fontSize: 24,
+              lineHeight: 48,
+              fontFamily: "IBM Plex Sans",
+              color: "#7b6dd1",
+              fontWeight: "bold",
+            }}
+          >
+            Qual é o seu{" "}
+            <Text
+              style={{
+                color: "#f48080",
+                fontFamily: '"B612 Mono", monospace',
+                fontWeight: "bold",
+              }}
+            >
+              nome
+            </Text>
+            ?
+          </Text>
         </View>
-        <LoadingBar width={206}/>
-        <ButtonConfirmar backgroundColor="#f48080"/>
+        <LoadingBar width={206} />
+
+        <InputName />
+        <ButtonConfirmar backgroundColor="#f48080" />
       </View>
-        
-      
     </View>
   );
 }
