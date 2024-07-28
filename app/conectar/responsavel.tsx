@@ -21,7 +21,7 @@ export default function TelaPerfilResponsavel() {
         <Logo />
       </View>
 
-      <View style={{}}>
+      <View style={{position: "absolute", zIndex: 1, marginTop: 210}}>
         <Image source={require("@/assets/images/family.png")} />
       </View>
 
@@ -32,7 +32,7 @@ export default function TelaPerfilResponsavel() {
           width,
           borderRadius: 50,
           alignItems: "center",
-          marginTop: 100,
+          marginTop: 350,
         }}
       >
         <View
