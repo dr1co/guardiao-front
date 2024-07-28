@@ -22,13 +22,14 @@ const styles = StyleSheet.create({
 
 type ButtonParameters = {
   backgroundColor: string;
+  text: string
 }
 
 export default function ButtonConfirmar(props: ButtonParameters) {
   return (
     <View>
       <TouchableOpacity style={{...styles.button, backgroundColor: props.backgroundColor}}>
-        <Text style={styles.text}>CONFIRMAR</Text>
+        <Text style={styles.text}>{props.text}</Text>
       </TouchableOpacity>
     </View>
   );

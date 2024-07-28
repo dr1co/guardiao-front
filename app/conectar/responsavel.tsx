@@ -39,11 +39,11 @@ export default function TelaPerfilResponsavel() {
           style={{
             marginBottom: 30,
             marginTop: 60,
-            width: 293,
+            width: 300,
             height: 96,
             flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
+            alignItems: 'center',
+            justifyContent: "space-between"
           }}
         >
           <ButtonBack />
@@ -71,8 +71,8 @@ export default function TelaPerfilResponsavel() {
         </View>
         <LoadingBar width={206} />
 
-        <InputName />
-        <ButtonConfirmar backgroundColor="#f48080" />
+        <InputName borderBottomColor="#f48080" placeholderTextColor="#f48080" />
+        <ButtonConfirmar text="CONFIRMAR" backgroundColor="#f48080" />
       </View>
     </View>
   );
