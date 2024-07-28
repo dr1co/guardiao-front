@@ -1,9 +1,10 @@
 import { View, useWindowDimensions, Image, Text, TouchableOpacity } from "react-native";
 import Logo from "@/components/Logo";
-import ButtonConfirmar from "@/components/ButtonConfirmar";
+import ButtonConfirmar from "@/components/ButtonGeral";
 import LoadingBar from "@/components/LoadingBar";
 import ButtonBack from "@/components/ButtonBack";
 import InputName from "@/components/InputName";
+import {Link} from "expo-router";
 
 export default function TelaPerfilResponsavel() {
   const { width, height } = useWindowDimensions();
@@ -72,7 +73,7 @@ export default function TelaPerfilResponsavel() {
         <LoadingBar width={206} />
 
         <InputName borderBottomColor="#f48080" placeholderTextColor="#f48080" />
-        <ButtonConfirmar text="CONFIRMAR" backgroundColor="#f48080" />
+        <Link href="/conectar/tutorialR"><ButtonConfirmar text="CONFIRMAR" backgroundColor="#f48080" /></Link>
       </View>
     </View>
   );

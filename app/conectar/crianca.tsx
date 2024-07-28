@@ -3,7 +3,7 @@ import Logo from "@/components/Logo";
 import LoadingBar from "@/components/LoadingBar";
 import ButtonBack from "@/components/ButtonBack";
 import InputName from "@/components/InputName";
-import ButtonConfirmar from "@/components/ButtonConfirmar";
+import ButtonConfirmar from "@/components/ButtonGeral";
 
 
 export default function TelaPerfilCrianca() {
