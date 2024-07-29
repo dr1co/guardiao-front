@@ -93,26 +93,28 @@ export default function TutorialResponsavel() {
           <View
             style={{
               flexDirection: "row",
-              width: 309,
+              width: 310,
               marginBottom: 50,
               marginTop: 30,
+              backgroundColor: "white",
+              borderRadius: 50,
+              borderLeftColor: "#f480d4",
+              borderLeftWidth: 5,
             }}
           >
-            <View
-              style={{ backgroundColor: "#f480d4", width: 3, height: 270 }}
-            ></View>
-            <View style={{ width: 280, marginLeft: 30, marginTop: 20 }}>
+            
+            <View style={{ width: 280, marginLeft: 20, marginTop: 20 }}>
               <Text style={{ color: "#9d9ea1", fontSize: 15, fontWeight: 500 }}>
                 <View style={{ flexDirection: "column" }}>
                   <Text style={{ marginBottom: 20 }}>
-                    1. No dispositivo do responsável, abra o Guardião e
-                    selecione a opção RESPONSÁVEL durante a configuração.
+                    <Text style={{fontSize: 25, fontFamily: 'B612 Mono, monospace', fontWeight: 'bold', color:'#f480d4'}}>1.</Text> No dispositivo do <Text style={{color: '#f48080'}}>responsável</Text>, abra o <Text style={{color: '#8093f4', fontFamily: 'B612 Mono, monospace'}}>Guardião</Text> e
+                    selecione a opção <Text style={{color: '#f48080', fontWeight: 600}}>RESPONSÁVEL</Text> durante a configuração.
                   </Text>
                   <Text style={{ marginBottom: 20 }}>
-                    2. Clique no botão de escaneamento no dispositivo do responsável para escanear o QR Code exibido no dispositivo da criança a partir do botão EXIBIR QR CODE.
+                  <Text style={{fontSize: 25, fontFamily: 'B612 Mono, monospace', fontWeight: 'bold', color:'#f480d4'}}>2.</Text> Clique no botão de escaneamento no dispositivo do <Text style={{color: '#f48080'}}>responsável</Text> para escanear o <Text style={{fontWeight: 600}}>QR Code</Text> exibido no dispositivo da <Text style={{color: '#f480d4'}}>criança</Text> a partir do botão <Text style={{color: '#f480d4', fontWeight: 600}}>EXIBIR QR CODE</Text>.
                   </Text>
                   <Text style={{ marginBottom: 20 }}>
-                    3. Aguarde a confirmação e a conexão estará completa.
+                  <Text style={{fontSize: 25, fontFamily: 'B612 Mono, monospace', fontWeight: 'bold', color:'#f480d4'}}>3.</Text> Aguarde a confirmação e a conexão estará completa.
                   </Text>
                 </View>
               </Text>
