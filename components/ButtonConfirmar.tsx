@@ -16,7 +16,8 @@ const styles = StyleSheet.create({
     color: 'white',
     fontFamily: 'B612 Mono, monospace',
     fontSize: 24,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    textAlign: 'center'
   }
 });
 
