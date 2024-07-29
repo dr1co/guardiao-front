@@ -22,7 +22,7 @@ export default function TelaPerfilCrianca() {
         <Logo />
       </View>
 
-      <View style={{position: 'absolute', zIndex: 1, marginTop: 210}}>
+      <View style={{ position: "absolute", zIndex: 1, marginTop: 210 }}>
         <Image source={require("@/assets/images/family.png")} />
       </View>
 
@@ -47,7 +47,7 @@ export default function TelaPerfilCrianca() {
             justifyContent: "space-between",
           }}
         >
-          <View style={{marginBottom: 45}}>
+          <View style={{ marginBottom: 45 }}>
             <ButtonBack />
           </View>
 
@@ -86,8 +86,21 @@ export default function TelaPerfilCrianca() {
           </Text>
         </View>
         <LoadingBar width={206} />
-
-        <InputName borderBottomColor="#f480d4" placeholderTextColor="#f480d4" />
+        <View style={{ marginBottom: -20 }}>
+          {" "}
+          <InputName
+            imagePath={require("@/assets/images/baby.png")}
+            placeholder="Digite o nome da criança."
+            borderBottomColor="#f480d4"
+            placeholderTextColor="#f480d4"
+          />
+        </View>
+        <InputName
+          imagePath={require("@/assets/images/idade.png")}
+          placeholder="Digite a idade da criança."
+          borderBottomColor="#f480d4"
+          placeholderTextColor="#f480d4"
+        />
         <ButtonConfirmar text="CONFIRMAR" backgroundColor="#f480d4" />
       </View>
     </View>

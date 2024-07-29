@@ -71,7 +71,7 @@ export default function TelaPerfilResponsavel() {
         </View>
         <LoadingBar width={206} />
 
-        <InputName borderBottomColor="#f48080" placeholderTextColor="#f48080" />
+        <InputName imagePath={require('@/assets/images/User.png')}placeholder="Digite seu nome." borderBottomColor="#f48080" placeholderTextColor="#f48080" />
         <ButtonConfirmar text="CONFIRMAR" backgroundColor="#f48080" />
       </View>
     </View>
