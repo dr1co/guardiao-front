@@ -85,7 +85,10 @@ export default function TelaPerfilCrianca() {
             da criança?
           </Text>
         </View>
-        <LoadingBar width={206} />
+        <View style={{marginBottom: -10}}>
+          {" "}
+          <LoadingBar width={206} />
+        </View>
         <View style={{ marginBottom: -20 }}>
           {" "}
           <InputName
