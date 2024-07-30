@@ -104,21 +104,19 @@ export default function TutorialResponsavel() {
             }}
           >
             
-            <View style={{ width: 280, marginLeft: 20, marginTop: 20 }}>
-              <Text style={{ color: "#9d9ea1", fontSize: 15, fontWeight: 500 }}>
-                <View style={{ flexDirection: "column" }}>
-                  <Text style={{ marginBottom: 20 }}>
+            <View style={{ width: 280, marginLeft: 20, marginTop: 20, flexDirection: "column" }}>
+              
+                  <Text style={{ marginBottom: 20, color: "#9d9ea1", fontSize: 15, fontWeight: 500 }}>
                     <Text style={{fontSize: 25, fontFamily: 'B612 Mono, monospace', fontWeight: 'bold', color:'#f480d4'}}>1.</Text> No dispositivo do <Text style={{color: '#f48080'}}>responsável</Text>, abra o <Text style={{color: '#8093f4', fontFamily: 'B612 Mono, monospace'}}>Guardião</Text> e
                     selecione a opção <Text style={{color: '#f48080', fontWeight: 600}}>RESPONSÁVEL</Text> durante a configuração.
                   </Text>
-                  <Text style={{ marginBottom: 20 }}>
+                  <Text style={{ marginBottom: 20, color: "#9d9ea1", fontSize: 15, fontWeight: 500 }}>
                   <Text style={{fontSize: 25, fontFamily: 'B612 Mono, monospace', fontWeight: 'bold', color:'#f480d4'}}>2.</Text> Clique no botão de escaneamento no dispositivo do <Text style={{color: '#f48080'}}>responsável</Text> para escanear o <Text style={{fontWeight: 600}}>QR Code</Text> exibido no dispositivo da <Text style={{color: '#f480d4'}}>criança</Text> a partir do botão <Text style={{color: '#f480d4', fontWeight: 600}}>EXIBIR QR CODE</Text>.
                   </Text>
-                  <Text style={{ marginBottom: 20 }}>
+                  <Text style={{ marginBottom: 20, color: "#9d9ea1", fontSize: 15, fontWeight: 500 }}>
                   <Text style={{fontSize: 25, fontFamily: 'B612 Mono, monospace', fontWeight: 'bold', color:'#f480d4'}}>3.</Text> Aguarde a confirmação e a conexão estará completa.
                   </Text>
-                </View>
-              </Text>
+               
             </View>
           </View>
         </View>
