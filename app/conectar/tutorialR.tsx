@@ -107,12 +107,9 @@ export default function TutorialResponsavel() {
                 alignItems: 'center'
               }}
             >
-              <View style={{ width: 280, marginLeft: 20, marginTop: 10 }}>
-                <Text
-                  style={{ color: "#9d9ea1", fontSize: 15, fontWeight: 500 }}
-                >
-                  <View style={{ flexDirection: "column" }}>
-                    <Text style={{ marginBottom: 10 }}>
+              <View style={{ width: 280, marginLeft: 20, marginTop: 10, flexDirection: "column" }}>
+                
+                    <Text style={{ marginBottom: 10, color: "#9d9ea1", fontSize: 15, fontWeight: 500  }}>
                       <Text
                         style={{
                           fontSize: 25,
@@ -136,7 +133,7 @@ export default function TutorialResponsavel() {
                       no dispositivo da
                       <Text style={{ color: "#f480d4" }}> criança</Text>.
                     </Text>
-                    <Text style={{ marginBottom: 10 }}>
+                    <Text style={{ marginBottom: 10, color: "#9d9ea1", fontSize: 15, fontWeight: 500 }}>
                       <Text
                         style={{
                           fontSize: 25,
@@ -152,7 +149,7 @@ export default function TutorialResponsavel() {
                       mesma conta do dispositivo do{" "}
                       <Text style={{ color: "#f48080" }}>responsável</Text>.
                     </Text>
-                    <Text style={{ marginBottom: 10 }}>
+                    <Text style={{ marginBottom: 10, color: "#9d9ea1", fontSize: 15, fontWeight: 500 }}>
                       <Text
                         style={{
                           fontSize: 25,
@@ -171,7 +168,7 @@ export default function TutorialResponsavel() {
                         }}
                       >Guardião</Text> no dispositivo da <Text style={{ color: '#f480d4' }}>criança</Text>.
                     </Text>
-                    <Text>
+                    <Text style={{color: "#9d9ea1", fontSize: 15, fontWeight: 500}}>
                       <Text
                         style={{
                           fontSize: 25,
@@ -191,8 +188,6 @@ export default function TutorialResponsavel() {
                       >Guardião</Text> e escaneie o <Text style={{fontWeight: 'bold'}}>QR Code</Text> exibido no dispositivo da 
                       <Text style={{color: '#f480d4'}}> criança</Text> para completar a conexão.
                       </Text>
-                    </Text>
-                  </View>
                 </Text>
               </View>
             </View>
