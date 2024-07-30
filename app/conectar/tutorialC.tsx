@@ -85,6 +85,7 @@ export default function TutorialResponsavel() {
               fontFamily: "IBM Plex Sans",
               fontWeight: "600",
               fontSize: 20,
+              textAlign: 'center'
             }}
           >
             Como realizar a conexão?
