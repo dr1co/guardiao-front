@@ -1,9 +1,5 @@
 import { View, useWindowDimensions, Text, Image } from "react-native";
-import Logo from "@/components/Logo";
-import ButtonPerfil from "@/components/ButtonPerfil";
-import SubTitle from "@/components/SubTitle";
-import LoadingBar from "@/components/LoadingBar";
-import { Link } from 'expo-router';
+import ButtonsTop from "@/components/ButtonsTop";
 
 export default function TelaPerfil() {
   const { width, height } = useWindowDimensions();
@@ -21,6 +17,7 @@ export default function TelaPerfil() {
     >
       <View style={{ backgroundColor: "#7b6dd1", height: 80, marginTop: 15 }}>
         <Image source={require('@/assets/images/logo.png')}/>
+        <ButtonsTop/>
       </View>
 
       <View
