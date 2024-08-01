@@ -26,7 +26,7 @@ type ButtonParameters = {
   text: string
 }
 
-export default function ButtonConfirmar(props: ButtonParameters) {
+export default function ButtonGeral(props: ButtonParameters) {
   return (
     <View>
       <TouchableOpacity style={{...styles.button, backgroundColor: props.backgroundColor}}>

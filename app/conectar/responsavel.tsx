@@ -22,7 +22,7 @@ export default function TelaPerfilResponsavel() {
         <Logo />
       </View>
 
-      <View style={{position: "absolute", zIndex: 1, marginTop: 210}}>
+      <View style={{ position: "absolute", zIndex: 1, marginTop: 210 }}>
         <Image source={require("@/assets/images/family.png")} />
       </View>
 
@@ -38,13 +38,13 @@ export default function TelaPerfilResponsavel() {
       >
         <View
           style={{
-            marginBottom: 30,
+            marginBottom: 20,
             marginTop: 60,
             width: 300,
             height: 96,
             flexDirection: "row",
-            alignItems: 'center',
-            justifyContent: "space-between"
+            alignItems: "center",
+            justifyContent: "space-between",
           }}
         >
           <ButtonBack />
@@ -72,8 +72,16 @@ export default function TelaPerfilResponsavel() {
         </View>
         <LoadingBar width={206} />
 
-        <InputName borderBottomColor="#f48080" placeholderTextColor="#f48080" />
-        <Link href="/conectar/tutorialR"><ButtonConfirmar text="CONFIRMAR" backgroundColor="#f48080" /></Link>
+        <View style={{marginBottom: 50}}>
+          {" "}
+          <InputName
+            imagePath={require("@/assets/images/User.png")}
+            placeholder="Digite seu nome."
+            borderBottomColor="#f48080"
+            placeholderTextColor="#f48080"
+          />
+        </View>
+        <ButtonConfirmar text="CONFIRMAR" backgroundColor="#f48080" />
       </View>
     </View>
   );

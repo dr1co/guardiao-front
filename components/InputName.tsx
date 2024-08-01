@@ -2,25 +2,39 @@ import{ TextInput, View, Image } from 'react-native';
 
 type InputParameters = {
   borderBottomColor: string,
-  placeholderTextColor: string
+  placeholderTextColor: string,
+  placeholder: string,
+  imagePath: object
 }
 
 export default function InputName(props: InputParameters) {
   return (
-    <View style={{flexDirection: 'row'}}>
+    <View style={{ flexDirection: "row" }}>
+      <View style={{ position: "absolute", marginLeft: 12, marginTop: 10 }}>
+        <Image source={props.imagePath} />
+      </View>
+
       <TextInput
         style={{
-          backgroundColor: 'white',
+          backgroundColor: "white",
           width: 332,
-          height: 48,
+          height: 58,
           marginBottom: 40,
           borderBottomWidth: 3,
-          borderBottomColor: props.borderBottomColor
+          borderBottomColor: props.borderBottomColor,
+          paddingLeft: 55,
         }}
-        placeholder="Digite seu nome"
-        placeholderTextColor={props.placeholderTextColor} 
-      ></TextInput>
+        placeholder={props.placeholder}
+        placeholderTextColor={props.placeholderTextColor}
+        keyboardType="visible-password"
+      />
+
+      <View style={{ position: "absolute", marginLeft: 290, marginTop: 15 }}>
+        <Image source={require("@/assets/images/ok_verde.png")} />
+      </View>
     </View>
   );
 
 };
+
+// fazer aparecer icon ok somente depois da verificação do input
