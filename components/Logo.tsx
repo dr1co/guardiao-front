@@ -1,4 +1,4 @@
-import { View, Text, Image, useWindowDimensions } from "react-native";
+import { View, Text, Image, useWindowDimensions, TouchableOpacity } from "react-native";
 
 export default function Logo() {
   const { width, height } = useWindowDimensions();
@@ -13,20 +13,24 @@ export default function Logo() {
         padding: 10,
         paddingLeft: 20,
         paddingRight: 20,
-        justifyContent: "space-between"
-
+        justifyContent: "space-between",
       }}
     >
-      <View style={{flexDirection: "row", alignItems: "center"}}>
+      <View style={{ flexDirection: "row", alignItems: "center" }}>
         <Image source={require("@/assets/images/logo.png")} />
-        <View style={{borderBottomColor: "white", borderBottomWidth: 2, paddingBottom: 2}}>
+        <View
+          style={{
+            borderBottomColor: "white",
+            borderBottomWidth: 2,
+            paddingBottom: 2,
+          }}
+        >
           <Text
             style={{
               color: "white",
               fontFamily: '"B612 Mono", monospace',
               fontWeight: "bold",
-              fontSize: 20, 
-              
+              fontSize: 20,
             }}
           >
             Guardião
@@ -35,7 +39,9 @@ export default function Logo() {
       </View>
 
       <View>
-        <Image source={require("@/assets/images/Logout.png")} />
+        <TouchableOpacity>
+          <Image source={require("@/assets/images/Logout.png")} />
+        </TouchableOpacity>
       </View>
     </View>
   );

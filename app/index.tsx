@@ -1,5 +1,5 @@
 import { View, StyleSheet } from "react-native";
-import TelaPerfil from "./screens/TelaPerfil";
+import TelaPerfil from "./conectar";
 
 
 export default function Index() {
