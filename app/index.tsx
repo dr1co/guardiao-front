@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     fontFamily: "IBM Plex Sans, sans-serif",
     color: "white",
     fontSize: 12,
-    fontWeight: 500,
+    fontWeight: "500",
   },
   balls: {
     position: "absolute",
@@ -119,11 +119,15 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     justifyContent: "center",
     alignItems: "center",
+    shadowColor: "black",
+    shadowOffset: { width: 1, height: 1 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
   },
   buttonText: {
     color: "white",
     fontFamily: '"B612 Mono", monospace',
-    fontWeight: 700,
+    fontWeight: "bold",
     fontSize: 20,
   },
   footer: {
