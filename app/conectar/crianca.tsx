@@ -4,7 +4,8 @@ import LoadingBar from "@/components/LoadingBar";
 import ButtonBack from "@/components/ButtonBack";
 import InputName from "@/components/InputName";
 import ButtonConfirmar from "@/components/ButtonConfirmar";
-import InputDOB from "@/components/inputDOB";
+import inputDOB from "@/components/inputDOB";
+
 
 export default function TelaPerfilCrianca() {
   const { width, height } = useWindowDimensions();

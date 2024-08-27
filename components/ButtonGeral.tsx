@@ -9,7 +9,8 @@ const styles = StyleSheet.create({
     height: 66,
     padding: 10,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    elevation: 5
   },
 
   text: {
@@ -25,7 +26,7 @@ type ButtonParameters = {
   text: string
 }
 
-export default function ButtonConfirmar(props: ButtonParameters) {
+export default function ButtonGeral(props: ButtonParameters) {
   return (
     <View>
       <TouchableOpacity style={{...styles.button, backgroundColor: props.backgroundColor}}>
