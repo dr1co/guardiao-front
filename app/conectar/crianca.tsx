@@ -4,7 +4,7 @@ import LoadingBar from "@/components/LoadingBar";
 import ButtonBack from "@/components/ButtonBack";
 import InputName from "@/components/InputName";
 import ButtonConfirmar from "@/components/ButtonConfirmar";
-import inputDOB from "@/components/inputDOB";
+import InputDOB from "@/components/inputDOB";
 
 
 export default function TelaPerfilCrianca() {
