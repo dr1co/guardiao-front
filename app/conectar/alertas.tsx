@@ -1,4 +1,4 @@
-import { View, useWindowDimensions, Image, Text } from "react-native";
+import { View, useWindowDimensions, Image, Text, ScrollView } from "react-native";
 import ButtonsTop from "@/components/ButtonsTop";
 import ButtonGeral from "@/components/ButtonGeral";
 import ButtonAlertas from "@/components/ButtonAlertas";
@@ -86,9 +86,20 @@ export default function TelaInicio() {
             Alertas:
           </Text>
         </View>
+
+        <ScrollView>
+        <ButtonAlertas />
+          <ButtonAlertas />
+          <ButtonAlertas />
+          <ButtonAlertas />
+          <ButtonAlertas />
+          <ButtonAlertas />
+          <ButtonAlertas />
+          <ButtonAlertas />
+        </ScrollView>
           
         <View>
-          <ButtonAlertas />
+          
         </View>
 
         <View>
