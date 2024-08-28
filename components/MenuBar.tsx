@@ -51,7 +51,7 @@ export default function MenuBar() {
           <TouchableOpacity>
             <Image source={require("@/assets/images/pie_white.png")} />
           </TouchableOpacity>
-          <View style={{ width: 40, marginTop: 23}}>
+          <View style={{ width: 40, marginTop: 23, marginLeft: -3}}>
             <Text style={styles.text}>Painel</Text>
           </View>
         </View>
