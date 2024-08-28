@@ -2,6 +2,7 @@ import { View, useWindowDimensions, Image, Text } from "react-native";
 import ButtonsTop from "@/components/ButtonsTop";
 import ButtonGeral from "@/components/ButtonGeral";
 import ButtonAlertas from "@/components/ButtonAlertas";
+import MenuBar from "@/components/MenuBar";
 
 export default function TelaInicio() {
   const { width, height } = useWindowDimensions();
@@ -97,6 +98,14 @@ export default function TelaInicio() {
           <ButtonGeral backgroundColor="#7B6DD1" text="" />
         </View>
       </View>
+
+
+      <MenuBar/>
+      <View>
+        
+      </View>
     </View>
+
+    
   );
 }
