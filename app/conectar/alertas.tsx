@@ -1,6 +1,7 @@
-import { View, useWindowDimensions, Image, Text } from 'react-native';
-import ButtonsTop from '@/components/ButtonsTop';
-import ButtonGeral from '@/components/ButtonGeral';
+import { View, useWindowDimensions, Image, Text } from "react-native";
+import ButtonsTop from "@/components/ButtonsTop";
+import ButtonGeral from "@/components/ButtonGeral";
+import ButtonAlertas from "@/components/ButtonAlertas";
 
 export default function TelaInicio() {
   const { width, height } = useWindowDimensions();
@@ -46,7 +47,9 @@ export default function TelaInicio() {
               marginTop: 30,
             }}
           >
-            Atualizações do <Text style={{ color: "#f48080" }}>Guardião</Text> sobre o dispositivo da Marina:
+            Atualizações do <Text style={{ color: "#f48080" }}>Guardião</Text>{" "}
+            sobre o dispositivo de{" "}
+            <Text style={{ color: "#f480d4" }}>[ChildName]</Text>:
           </Text>
           <Text
             style={{
@@ -58,8 +61,7 @@ export default function TelaInicio() {
               marginBottom: 20,
             }}
           >
-            Selecione uma criança e consulte as últimas atualizações do <Text style={{fontFamily: "'B612 Mono', monospace", color: "#8093f4", fontWeight: 600}}>Guardião</Text>
-            .
+            Atualizado há [UpdatedTime] minutos.
           </Text>
         </View>
         <View
@@ -70,21 +72,29 @@ export default function TelaInicio() {
             marginBottom: 30,
           }}
         ></View>
-        <View style={{width: 309}}>
+        <View style={{ width: 309 }}>
           <Text
             style={{
               marginBottom: 20,
               color: "#888888",
               fontSize: 20,
               fontWeight: "bold",
-              textAlign: 'left'
+              textAlign: "left",
             }}
           >
-            Crianças:
+            Alertas:
           </Text>
         </View>
+          
         <View>
-          <ButtonGeral backgroundColor="#7B6DD1" text="+" />
+          <ButtonAlertas />
+        </View>
+
+        <View>
+          <View style={{ position: "absolute", zIndex: 2, width: '100%', alignItems: 'center', marginTop: 15 }}>
+            <Image source={require("@/assets/images/update.png")} />
+          </View>
+          <ButtonGeral backgroundColor="#7B6DD1" text="" />
         </View>
       </View>
     </View>
