@@ -52,7 +52,11 @@ export default function TelaConteudo() {
             alignItems: "center",
           }}
         >
-          <View style={{ width: 309 }}>
+          
+
+        <View style={{height: 730, marginTop: 20}}>
+            <ScrollView>
+            <View style={{ width: 309 }}>
             <Text
               style={{
                 fontSize: 24,
@@ -140,9 +144,6 @@ export default function TelaConteudo() {
               marginBottom: 30,
             }}
           ></View>
-
-        <View style={{height: 400}}>
-            <ScrollView>
               <View
                 style={{
                   width: 332,
