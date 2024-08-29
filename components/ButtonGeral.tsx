@@ -5,8 +5,8 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: '#f48080',
     borderRadius: 16,
-    width: 332,
-    height: 66,
+    /*width: 332,
+    height: 66,*/
     padding: 10,
     alignItems: 'center',
     justifyContent: 'center',
@@ -23,13 +23,15 @@ const styles = StyleSheet.create({
 
 type ButtonParameters = {
   backgroundColor: string;
-  text: string
+  text: string;
+  width: number,
+  height: number
 }
 
 export default function ButtonGeral(props: ButtonParameters) {
   return (
     <View>
-      <TouchableOpacity style={{...styles.button, backgroundColor: props.backgroundColor}}>
+      <TouchableOpacity style={{...styles.button, backgroundColor: props.backgroundColor, width: props.width, height: props.height}}>
         <Text style={styles.text}>{props.text}</Text>
       </TouchableOpacity>
     </View>

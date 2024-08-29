@@ -86,7 +86,7 @@ export default function TelaInicio() {
         </View>
         <View>
           <ButtonCriancas />
-          <ButtonGeral backgroundColor="#7B6DD1" text="+" />
+          <ButtonGeral backgroundColor="#7B6DD1" text="+" width={332} height={66}/>
         </View>
       </View>
     </View>

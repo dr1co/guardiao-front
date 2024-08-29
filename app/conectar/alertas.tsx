@@ -106,7 +106,7 @@ export default function TelaInicio() {
           <View style={{ position: "absolute", zIndex: 2, width: '100%', alignItems: 'center', marginTop: 15 }}>
             <Image source={require("@/assets/images/update.png")} />
           </View>
-          <ButtonGeral backgroundColor="#7B6DD1" text="" />
+          <ButtonGeral backgroundColor="#7B6DD1" text="" width={332} height={66} />
         </View>
       </View>
 
