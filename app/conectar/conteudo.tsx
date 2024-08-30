@@ -52,98 +52,96 @@ export default function TelaConteudo() {
             alignItems: "center",
           }}
         >
-          
-
-        <View style={{height: 730, marginTop: 20}}>
+          <View style={{ height: 730, marginTop: 20 }}>
             <ScrollView>
-            <View style={{ width: 309 }}>
-            <Text
-              style={{
-                fontSize: 24,
-                lineHeight: 48,
-                fontFamily: "IBM Plex Sans",
-                color: "#7b6dd1",
-                fontWeight: "bold",
-                marginTop: 30,
-              }}
-            >
-              Conteúdo informativo
-            </Text>
+              <View style={{ width: 309 }}>
+                <Text
+                  style={{
+                    fontSize: 24,
+                    lineHeight: 48,
+                    fontFamily: "IBM Plex Sans",
+                    color: "#7b6dd1",
+                    fontWeight: "bold",
+                    marginTop: 30,
+                  }}
+                >
+                  Conteúdo informativo
+                </Text>
 
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
+                <View style={{ flexDirection: "row", alignItems: "center" }}>
+                  <View
+                    style={{
+                      width: 53,
+                      height: 53,
+                      backgroundColor: "white",
+                      borderRadius: 50,
+                      borderWidth: 2,
+                      borderColor: "#7B6DD1",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Image source={require("@/assets/images/commercial.png")} />
+                  </View>
+
+                  <Text
+                    style={{
+                      fontSize: 15,
+                      color: "#888888",
+                      fontWeight: "500",
+                      fontFamily: "IBM Plex Sans",
+                      marginTop: 20,
+                      marginBottom: 20,
+                      width: 250,
+                      marginLeft: 10,
+                    }}
+                  >
+                    Conheça os canais de denúncia de crimes cibernéticos contra
+                    menores.
+                  </Text>
+                </View>
+
+                <View style={{ flexDirection: "row", alignItems: "center" }}>
+                  <View
+                    style={{
+                      width: 53,
+                      height: 53,
+                      backgroundColor: "white",
+                      borderRadius: 50,
+                      borderWidth: 2,
+                      borderColor: "#7B6DD1",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Image source={require("@/assets/images/literature.png")} />
+                  </View>
+
+                  <Text
+                    style={{
+                      fontSize: 15,
+                      color: "#888888",
+                      fontWeight: "500",
+                      fontFamily: "IBM Plex Sans",
+                      marginTop: 20,
+                      marginBottom: 20,
+                      width: 250,
+                      marginLeft: 10,
+                    }}
+                  >
+                    Aprenda, com artigos selecionados, mais sobre o mundo
+                    virtual e a relação dos menores com ele.
+                  </Text>
+                </View>
+              </View>
               <View
                 style={{
-                  width: 53,
-                  height: 53,
-                  backgroundColor: "white",
-                  borderRadius: 50,
-                  borderWidth: 2,
-                  borderColor: "#7B6DD1",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  height: 2,
+                  backgroundColor: "#7b6dd1",
+                  width: 309,
+                  marginBottom: 30,
                 }}
-              >
-                <Image source={require("@/assets/images/commercial.png")} />
-              </View>
-
-              <Text
-                style={{
-                  fontSize: 15,
-                  color: "#888888",
-                  fontWeight: "500",
-                  fontFamily: "IBM Plex Sans",
-                  marginTop: 20,
-                  marginBottom: 20,
-                  width: 250,
-                  marginLeft: 10,
-                }}
-              >
-                Conheça os canais de denúncia de crimes cibernéticos contra
-                menores.
-              </Text>
-            </View>
-
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <View
-                style={{
-                  width: 53,
-                  height: 53,
-                  backgroundColor: "white",
-                  borderRadius: 50,
-                  borderWidth: 2,
-                  borderColor: "#7B6DD1",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Image source={require("@/assets/images/literature.png")} />
-              </View>
-
-              <Text
-                style={{
-                  fontSize: 15,
-                  color: "#888888",
-                  fontWeight: "500",
-                  fontFamily: "IBM Plex Sans",
-                  marginTop: 20,
-                  marginBottom: 20,
-                  width: 250,
-                  marginLeft: 10,
-                }}
-              >
-                Aprenda, com artigos selecionados, mais sobre o mundo virtual e
-                a relação dos menores com ele.
-              </Text>
-            </View>
-          </View>
-          <View
-            style={{
-              height: 2,
-              backgroundColor: "#7b6dd1",
-              width: 309,
-              marginBottom: 30,
-            }}
-          ></View>
+              ></View>
               <View
                 style={{
                   width: 332,
@@ -155,11 +153,17 @@ export default function TelaConteudo() {
                   padding: 20,
                 }}
               >
+                <View style={{ position: "absolute", top: -15, marginLeft: 250 }}>
+                  <Image
+                    source={require("@/assets/images/mark_denuncia.png")}
+                  />
+                </View>
                 <Text
                   style={{ fontSize: 15, color: "#7b6dd1", fontWeight: "bold" }}
                 >
                   Canais de denúncia
                 </Text>
+
                 <View>
                   <View style={{ marginBottom: 20, marginTop: 20 }}>
                     <Text
@@ -194,6 +198,9 @@ export default function TelaConteudo() {
               </View>
 
               <ContainerConteudo />
+              <View style={{height: 200}}>
+
+              </View>
             </ScrollView>
           </View>
         </View>

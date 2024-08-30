@@ -15,6 +15,10 @@ export default function ContainerConteudo() {
         alignItems: "center",
       }}
     >
+
+      <View style={{ position: 'absolute', top: -15, marginLeft: 260}}>
+        <Image source={require('@/assets/images/mark_book.png')}/>
+      </View>
       <View>[Image]</View>
 
       <View
