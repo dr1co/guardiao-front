@@ -8,8 +8,9 @@ import {
 import ButtonsTop from "@/components/ButtonsTop";
 import ButtonGeral from "@/components/ButtonGeral";
 import MenuBar from "@/components/MenuBar";
+import PeriodSwitch from "@/components/PeriodSwitch";
 
-export default function TelaInicio() {
+export default function TelaPainel() {
   const { width, height } = useWindowDimensions();
 
   return (
@@ -95,24 +96,11 @@ export default function TelaInicio() {
               marginBottom: 30,
             }}
           ></View>
+
+          <PeriodSwitch />
         </View>
 
         <ScrollView></ScrollView>
-
-        <View>
-          <View
-            style={{
-              position: "absolute",
-              zIndex: 2,
-              width: "100%",
-              alignItems: "center",
-              marginTop: 15,
-            }}
-          >
-            <Image source={require("@/assets/images/update.png")} />
-          </View>
-          <ButtonGeral backgroundColor="#7B6DD1" text="" />
-        </View>
       </View>
 
       <MenuBar />
