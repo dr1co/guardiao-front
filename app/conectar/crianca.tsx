@@ -3,8 +3,8 @@ import Logo from "@/components/Logo";
 import LoadingBar from "@/components/LoadingBar";
 import ButtonBack from "@/components/ButtonBack";
 import InputName from "@/components/InputName";
-import ButtonConfirmar from "@/components/ButtonConfirmar";
-
+import ButtonConfirmar from "@/components/ButtonGeral";
+import {Link} from 'expo-router';
 
 export default function TelaPerfilCrianca() {
   const { width, height } = useWindowDimensions();
@@ -105,6 +105,9 @@ export default function TelaPerfilCrianca() {
           placeholderTextColor="#f480d4"
         />
         <ButtonConfirmar text="CONFIRMAR" backgroundColor="#f480d4" />
+        <Link href={'/conectar/tutorialC'}>
+          <ButtonConfirmar text="CONFIRMAR" backgroundColor="#f480d4" />
+        </Link>
       </View>
     </View>
   );

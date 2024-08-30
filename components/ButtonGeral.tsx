@@ -9,7 +9,8 @@ const styles = StyleSheet.create({
     height: 66,
     padding: 10,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    elevation: 5
   },
 
   text: {

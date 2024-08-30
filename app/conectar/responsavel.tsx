@@ -1,9 +1,10 @@
 import { View, useWindowDimensions, Image, Text, TouchableOpacity } from "react-native";
 import Logo from "@/components/Logo";
-import ButtonConfirmar from "@/components/ButtonConfirmar";
+import ButtonConfirmar from "@/components/ButtonGeral";
 import LoadingBar from "@/components/LoadingBar";
 import ButtonBack from "@/components/ButtonBack";
 import InputName from "@/components/InputName";
+import {Link} from "expo-router";
 
 export default function TelaPerfilResponsavel() {
   const { width, height } = useWindowDimensions();
