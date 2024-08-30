@@ -1,4 +1,5 @@
 import { TouchableOpacity, Text, StyleSheet, View, Image } from "react-native";
+import { useState } from "react";
 
 const styles = StyleSheet.create({
   container: {
@@ -30,20 +31,33 @@ const styles = StyleSheet.create({
     fontSize: 12,
     textAlign: "center",
   },
+
+  textSelected: {
+    color: "white",
+    fontSize: 12,
+    textAlign: "center",
+    fontWeight: "bold"
+  }
 });
 
 export default function MenuBar() {
+  const [selectedItem, setSelectedItem] = useState("Início");
+
+  function handleSelectedUtem(item: string) {
+    setSelectedItem(item);
+  }
+
   return (
     <View style={styles.container}>
 
       <View style={styles.menuBar}>
 
         <View style={{ marginLeft: 35, marginTop: 5}}>
-          <TouchableOpacity style={styles.circle}>
-            <Image source={require("@/assets/images/home_purple.png")} />
+          <TouchableOpacity onPress={() => handleSelectedUtem("Início")}>
+            <Image source={selectedItem === "Início" ? require("@/assets/images/home_purple.png") : require("@/assets/images/selected_inicio.png")} />
           </TouchableOpacity>
           <View style={{ width: 60, marginTop: 10}}>
-            <Text style={{...styles.text, fontWeight: 'bold'}}>Início</Text>
+            <Text style={selectedItem === "Início" ? styles.textSelected : styles.text }>Início</Text>
           </View>
         </View>
 
