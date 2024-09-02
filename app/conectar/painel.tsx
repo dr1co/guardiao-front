@@ -9,7 +9,7 @@ import ButtonsTop from "@/components/ButtonsTop";
 import ButtonGeral from "@/components/ButtonGeral";
 import MenuBar from "@/components/MenuBar";
 import PeriodSwitch from "@/components/PeriodSwitch";
-
+0
 export default function TelaPainel() {
   const { width, height } = useWindowDimensions();
 

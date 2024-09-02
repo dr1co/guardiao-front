@@ -54,7 +54,7 @@ export default function MenuBar() {
 
         <View style={{ marginLeft: 35, marginTop: 5}}>
           <TouchableOpacity onPress={() => handleSelectedUtem("Início")}>
-            <Image source={selectedItem === "Início" ? require("@/assets/images/home_purple.png") : require("@/assets/images/selected_inicio.png")} />
+            <Image source={selectedItem === "Início" ? require("@/assets/images/selected_inicio.png"): require("@/assets/images/home_purple.png") } />
           </TouchableOpacity>
           <View style={{ width: 60, marginTop: 10}}>
             <Text style={selectedItem === "Início" ? styles.textSelected : styles.text }>Início</Text>
