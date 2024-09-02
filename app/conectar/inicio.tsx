@@ -1,25 +1,34 @@
-import { View, useWindowDimensions, Text, Image } from "react-native";
-import ButtonsTop from "@/components/ButtonsTop";
 
-export default function TelaPerfil() {
+import { View, useWindowDimensions, Image, Text } from 'react-native';
+import ButtonsTop from '@/components/ButtonsTop';
+import ButtonCriancas from '@/components/ButtonCriancas';
+import ButtonGeral from '@/components/ButtonGeral';
+
+export default function TelaInicio() {
   const { width, height } = useWindowDimensions();
 
 
   return (
     <View
       style={{
-        backgroundColor: "#7b6dd1",
+        width,
+        height,
         flex: 1,
-        width: width,
-        minHeight: height,
         alignItems: "center",
+        backgroundColor: "#7b6dd1",
       }}
     >
-      <View style={{ backgroundColor: "#7b6dd1", height: 80, marginTop: 15 }}>
-        <Image source={require('@/assets/images/logo.png')}/>
-        <ButtonsTop/>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          width,
+          padding: 20,
+        }}
+      >
+        <Image source={require("@/assets/images/logo.png")} />
+        <ButtonsTop />
       </View>
-
       <View
         style={{
           backgroundColor: "#e2e1ff",
@@ -29,14 +38,7 @@ export default function TelaPerfil() {
           alignItems: "center",
         }}
       >
-        <View
-          style={{
-            marginBottom: 30,
-            marginTop: 60,
-            width: 293,
-            height: 96,
-          }}
-        >
+        <View style={{ width: 309 }}>
           <Text
             style={{
               fontSize: 24,
@@ -44,29 +46,50 @@ export default function TelaPerfil() {
               fontFamily: "IBM Plex Sans",
               color: "#7b6dd1",
               fontWeight: "bold",
+              marginTop: 30,
             }}
           >
-            Olá, {" "}
-            <Text
-              style={{
-                color: "#f48080",
-                fontWeight: "bold",
-              }}
-            >
-              Usuário</Text>!
+            Olá, <Text style={{ color: "#f48080" }}>Usuário</Text>!
+          </Text>
+          <Text
+            style={{
+              fontSize: 15,
+              color: "#888888",
+              fontWeight: "500",
+              fontFamily: "IBM Plex Sans",
+              marginTop: 20,
+              marginBottom: 20,
+            }}
+          >
+            Selecione uma criança e consulte as últimas atualizações do <Text style={{fontFamily: "'B612 Mono', monospace", color: "#8093f4", fontWeight: 600}}>Guardião</Text>
+            .
           </Text>
         </View>
-
+        <View
+          style={{
+            height: 2,
+            backgroundColor: "#7b6dd1",
+            width: 309,
+            marginBottom: 30,
+          }}
+        ></View>
+        <View style={{width: 309}}>
+          <Text
+            style={{
+              marginBottom: 20,
+              color: "#888888",
+              fontSize: 20,
+              fontWeight: "bold",
+              textAlign: 'left'
+            }}
+          >
+            Crianças:
+          </Text>
+        </View>
         <View>
-          <Text style={{
-            fontFamily: "IBM Plex Sans",
-            color: '#888888',
-            fontWeight: 500
-          }}>
-            Selecione uma <Text style={{color: '#f480d4'}}>criança</Text> e consulte as últimas atualizações do Guardião.
-          </Text>
+          <ButtonCriancas />
+          <ButtonGeral backgroundColor="#7B6DD1" text="+" />
         </View>
-    
       </View>
     </View>
   );

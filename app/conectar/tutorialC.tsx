@@ -116,7 +116,6 @@ export default function TutorialCrianca() {
                   <Text style={{ marginBottom: 20, color: "#9d9ea1", fontSize: 15, fontWeight: 500 }}>
                   <Text style={{fontSize: 25, fontFamily: 'B612 Mono, monospace', fontWeight: 'bold', color:'#f480d4'}}>3.</Text> Aguarde a confirmação e a conexão estará completa.
                   </Text>
-               
             </View>
           </View>
         </View>
