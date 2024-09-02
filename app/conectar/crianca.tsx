@@ -105,6 +105,9 @@ export default function TelaPerfilCrianca() {
           placeholderTextColor="#f480d4"
         />
         <ButtonConfirmar text="CONFIRMAR" backgroundColor="#f480d4" />
+        <Link href={'/conectar/tutorialC'}>
+          <ButtonConfirmar text="CONFIRMAR" backgroundColor="#f480d4" />
+        </Link>
       </View>
     </View>
   );
