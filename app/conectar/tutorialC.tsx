@@ -4,7 +4,7 @@ import LoadingBar from "@/components/LoadingBar";
 import ButtonEscanear from "@/components/ButtonGeral"
 import ButtonBack from "@/components/ButtonBack";
 
-export default function TutorialResponsavel() {
+export default function TutorialCrianca() {
   const { width, height } = useWindowDimensions();
 
   return (
