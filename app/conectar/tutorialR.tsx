@@ -90,7 +90,7 @@ export default function TutorialResponsavel() {
           >
             Como realizar a conexão?
           </Text>
-
+          
           <View>
             <View
               style={{
