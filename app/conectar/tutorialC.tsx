@@ -3,6 +3,7 @@ import Logo from "@/components/Logo";
 import LoadingBar from "@/components/LoadingBar";
 import ButtonEscanear from "@/components/ButtonGeral"
 import ButtonBack from "@/components/ButtonBack";
+import ButtonGerarQR from "@/components/ButtonGerarQR";
 
 export default function TutorialResponsavel() {
   const { width, height } = useWindowDimensions();
@@ -121,7 +122,7 @@ export default function TutorialResponsavel() {
           </View>
         </View>
         <View>
-          <ButtonEscanear backgroundColor="#f480d4" text="EXIBIR QR CODE" />
+          <ButtonGerarQR />
         </View>
       </View>
     </View>

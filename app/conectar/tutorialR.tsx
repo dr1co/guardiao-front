@@ -1,7 +1,7 @@
-import { View, Text, useWindowDimensions, Image } from "react-native";
+import { View, Text, useWindowDimensions, Image, TouchableOpacity } from "react-native";
 import Logo from "@/components/Logo";
 import LoadingBar from "@/components/LoadingBar";
-import ButtonEscanear from "@/components/ButtonGeral"
+import ButtonEscanearQR from "@/components/ButtonEscanearQR"
 import ButtonBack from "@/components/ButtonBack";
 
 export default function TutorialResponsavel() {
@@ -194,7 +194,7 @@ export default function TutorialResponsavel() {
           </View>
         </View>
         <View>
-          <ButtonEscanear backgroundColor="#f48080" text="ESCANEAR QR CODE" />
+          <ButtonEscanearQR  />
         </View>
       </View>
     </View>
