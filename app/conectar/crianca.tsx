@@ -3,8 +3,9 @@ import Logo from "@/components/Logo";
 import LoadingBar from "@/components/LoadingBar";
 import ButtonBack from "@/components/ButtonBack";
 import InputName from "@/components/InputName";
-import ButtonConfirmar from "@/components/ButtonGeral";
-import {Link} from 'expo-router';
+import ButtonConfirmar from "@/components/ButtonConfirmar";
+import InputDOB from "@/components/inputDOB";
+
 
 export default function TelaPerfilCrianca() {
   const { width, height } = useWindowDimensions();
@@ -80,7 +81,7 @@ export default function TelaPerfilCrianca() {
                 fontWeight: "bold",
               }}
             >
-              idade
+              data de nascimento
             </Text>{" "}
             da criança?
           </Text>
@@ -93,17 +94,13 @@ export default function TelaPerfilCrianca() {
           {" "}
           <InputName
             imagePath={require("@/assets/images/baby.png")}
-            placeholder="Digite o nome da criança."
+            placeholder="Digite o nome."
             borderBottomColor="#f480d4"
             placeholderTextColor="#f480d4"
           />
         </View>
-        <InputName
-          imagePath={require("@/assets/images/idade.png")}
-          placeholder="Digite a idade da criança."
-          borderBottomColor="#f480d4"
-          placeholderTextColor="#f480d4"
-        />
+        <InputDOB></InputDOB>
+
         <ButtonConfirmar text="CONFIRMAR" backgroundColor="#f480d4" />
         <Link href={'/conectar/tutorialC'}>
           <ButtonConfirmar text="CONFIRMAR" backgroundColor="#f480d4" />
