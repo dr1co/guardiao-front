@@ -1,3 +1,4 @@
+
 import { View, useWindowDimensions, Image, Text } from 'react-native';
 import ButtonsTop from '@/components/ButtonsTop';
 import ButtonCriancas from '@/components/ButtonCriancas';
@@ -5,6 +6,7 @@ import ButtonGeral from '@/components/ButtonGeral';
 
 export default function TelaInicio() {
   const { width, height } = useWindowDimensions();
+
 
   return (
     <View
