@@ -5,7 +5,7 @@ import ButtonEscanear from "@/components/ButtonGeral"
 import ButtonBack from "@/components/ButtonBack";
 import ButtonGerarQR from "@/components/ButtonGerarQR";
 
-export default function TutorialResponsavel() {
+export default function TutorialCrianca() {
   const { width, height } = useWindowDimensions();
 
   return (
