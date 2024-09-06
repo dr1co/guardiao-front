@@ -62,7 +62,10 @@ export default function TelaPainel() {
                 marginTop: 30,
               }}
             >
-              <Text style={{color: '#8093f4'}}>Painel de controle</Text> de <Text style={{ color: "#f480d4" }}>[ChildName]</Text>:
+
+              <Text style={{ color: "#8093f4" }}>Painel de controle</Text> de{" "}
+              <Text style={{ color: "#f480d4" }}>[ChildName]</Text>:
+
             </Text>
             <Text
               style={{
@@ -75,6 +78,7 @@ export default function TelaPainel() {
               }}
             >
               Analise as atividades online e verifique ameaças detectadas pelo{" "}
+
               <Text
                 style={{
                   fontFamily: "'B612 Mono', monospace",
@@ -86,6 +90,7 @@ export default function TelaPainel() {
               </Text>
               .
             </Text>
+
           </View>
           <View
             style={{
@@ -96,11 +101,13 @@ export default function TelaPainel() {
             }}
           ></View>
 
+
           <PeriodSwitch />
         </View>
 
         <ScrollView></ScrollView>
       </View>
+
       <MenuBar />
       <View></View>
     </View>
