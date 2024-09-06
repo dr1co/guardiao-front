@@ -1,8 +1,13 @@
-import { View, Text, Image, useWindowDimensions, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  useWindowDimensions,
+  TouchableOpacity,
+} from "react-native";
 
 export default function Logo() {
   const { width, height } = useWindowDimensions();
-
 
   return (
     <View
@@ -17,7 +22,7 @@ export default function Logo() {
       }}
     >
       <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <Image source={require("@/assets/images/logo.png")} />
+        <Image source={require("@/assets/images/logo.svg")} />
         <View
           style={{
             borderBottomColor: "white",

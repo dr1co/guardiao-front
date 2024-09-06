@@ -9,15 +9,15 @@ const styles = StyleSheet.create({
     height: 66,
     padding: 10,
     alignItems: 'center',
-    justifyContent: 'center',
-    elevation: 5
+    justifyContent: 'center'
   },
 
   text: {
     color: 'white',
     fontFamily: 'B612 Mono, monospace',
     fontSize: 24,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    textAlign: 'center'
   }
 });
 
@@ -35,4 +35,3 @@ export default function ButtonConfirmar(props: ButtonParameters) {
     </View>
   );
 }
-

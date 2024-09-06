@@ -1,29 +1,11 @@
-
-import { View, useWindowDimensions, Image, Text } from 'react-native';
-import ButtonsTop from '@/components/ButtonsTop';
-import ButtonCriancas from '@/components/ButtonCriancas';
-import ButtonGeral from '@/components/ButtonGeral';
-import axiosInstance from '@/api/axiosInstance';
-import { useEffect, useState } from 'react';
+import { View, useWindowDimensions, Image, Text, ScrollView } from "react-native";
+import ButtonsTop from "@/components/ButtonsTop";
+import ButtonGeral from "@/components/ButtonGeral";
+import ButtonAlertas from "@/components/ButtonAlertas";
+import MenuBar from "@/components/MenuBar";
 
 export default function TelaInicio() {
   const { width, height } = useWindowDimensions();
-  const [userName, setUserName] = useState('');
-
-  useEffect(() => {
-    axiosInstance.get('/user/1')
-    .then(response => {
-      const rows = response.data.rows;
-      if (rows && rows.length > 0) {
-        const userName = rows[0].name;
-        setUserName(userName);
-      }
-    })
-    .catch(error => {
-      console.error(error);
-    });
-  },[]);
-
 
   return (
     <View
@@ -66,7 +48,9 @@ export default function TelaInicio() {
               marginTop: 30,
             }}
           >
-            Olá, {userName ? <Text style={{ color: "#f48080" }}>{userName}</Text> :  'Unknown user'}!
+            Atualizações do <Text style={{ color: "#f48080" }}>Guardião</Text>{" "}
+            sobre o dispositivo de{" "}
+            <Text style={{ color: "#f480d4" }}>[ChildName]</Text>:
           </Text>
           <Text
             style={{
@@ -78,8 +62,7 @@ export default function TelaInicio() {
               marginBottom: 20,
             }}
           >
-            Selecione uma criança e consulte as últimas atualizações do <Text style={{fontFamily: "'B612 Mono', monospace", color: "#8093f4", fontWeight: 600}}>Guardião</Text>
-            .
+            Atualizado há [UpdatedTime] minutos.
           </Text>
         </View>
         <View
@@ -90,24 +73,50 @@ export default function TelaInicio() {
             marginBottom: 30,
           }}
         ></View>
-        <View style={{width: 309}}>
+        <View style={{ width: 309 }}>
           <Text
             style={{
               marginBottom: 20,
               color: "#888888",
               fontSize: 20,
               fontWeight: "bold",
-              textAlign: 'left'
+              textAlign: "left",
             }}
           >
-            Crianças:
+            Alertas:
           </Text>
         </View>
+
+        <ScrollView>
+        <ButtonAlertas />
+          <ButtonAlertas />
+          <ButtonAlertas />
+          <ButtonAlertas />
+          <ButtonAlertas />
+          <ButtonAlertas />
+          <ButtonAlertas />
+          <ButtonAlertas />
+        </ScrollView>
+          
         <View>
-          <ButtonCriancas />
-          <ButtonGeral backgroundColor="#7B6DD1" text="+" />
+          
+        </View>
+
+        <View>
+          <View style={{ position: "absolute", zIndex: 2, width: '100%', alignItems: 'center', marginTop: 15 }}>
+            <Image source={require("@/assets/images/update.png")} />
+          </View>
+          <ButtonGeral backgroundColor="#7B6DD1" text="" />
         </View>
       </View>
+
+
+      <MenuBar/>
+      <View>
+        
+      </View>
     </View>
+
+    
   );
 }
