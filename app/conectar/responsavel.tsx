@@ -72,7 +72,7 @@ export default function TelaPerfilResponsavel() {
         </View>
         <LoadingBar width={206} />
 
-        <View style={{marginBottom: 50}}>
+        <View style={{marginBottom: 30}}>
           {" "}
           <InputName
             imagePath={require("@/assets/images/User.png")}
