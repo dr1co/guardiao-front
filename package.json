@@ -17,8 +17,11 @@
   "dependencies": {
     "@expo/vector-icons": "^14.0.2",
     "@react-navigation/native": "^6.0.2",
-    "axios": "^1.7.2",
+
+    "axios": "^1.7.5",
+
     "date-fns": "^3.6.0",
+
     "dotenv": "^16.4.5",
     "expo": "~51.0.20",
     "expo-barcode-scanner": "~13.0.1",
