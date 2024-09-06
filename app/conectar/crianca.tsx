@@ -5,7 +5,7 @@ import ButtonBack from "@/components/ButtonBack";
 import InputName from "@/components/InputName";
 import ButtonConfirmar from "@/components/ButtonConfirmar";
 import InputDOB from "@/components/inputDOB";
-
+import { Link } from "expo-router";
 
 export default function TelaPerfilCrianca() {
   const { width, height } = useWindowDimensions();
@@ -34,7 +34,7 @@ export default function TelaPerfilCrianca() {
           width,
           borderRadius: 50,
           alignItems: "center",
-          marginTop: 350,
+          marginTop: 300,
         }}
       >
         <View
@@ -91,7 +91,6 @@ export default function TelaPerfilCrianca() {
           <LoadingBar width={206} />
         </View>
         <View style={{ marginBottom: -20 }}>
-          {" "}
           <InputName
             imagePath={require("@/assets/images/baby.png")}
             placeholder="Digite o nome."
@@ -99,9 +98,11 @@ export default function TelaPerfilCrianca() {
             placeholderTextColor="#f480d4"
           />
         </View>
-        <InputDOB></InputDOB>
+        <InputDOB/>
 
-        <ButtonConfirmar text="CONFIRMAR" backgroundColor="#f480d4" />
+        <Link href={'/conectar/tutorialC'}>
+          <ButtonConfirmar text="CONFIRMAR" backgroundColor="#f480d4" />
+        </Link>
       </View>
     </View>
   );

@@ -8,8 +8,8 @@ import {
 import ButtonsTop from "@/components/ButtonsTop";
 import ButtonGeral from "@/components/ButtonGeral";
 import MenuBar from "@/components/MenuBar";
-
-export default function TelaInicio() {
+import PeriodSwitch from "@/components/PeriodSwitch";
+export default function TelaPainel() {
   const { width, height } = useWindowDimensions();
 
   return (
@@ -62,8 +62,10 @@ export default function TelaInicio() {
                 marginTop: 30,
               }}
             >
+
               <Text style={{ color: "#8093f4" }}>Painel de controle</Text> de{" "}
               <Text style={{ color: "#f480d4" }}>[ChildName]</Text>:
+
             </Text>
             <Text
               style={{
@@ -76,8 +78,19 @@ export default function TelaInicio() {
               }}
             >
               Analise as atividades online e verifique ameaças detectadas pelo{" "}
-              <Text style={{ color: "#8093f4" }}>Guardião</Text>.
+
+              <Text
+                style={{
+                  fontFamily: "'B612 Mono', monospace",
+                  color: "#8093f4",
+                  fontWeight: 600,
+                }}
+              >
+                Guardião
+              </Text>
+              .
             </Text>
+
           </View>
           <View
             style={{
@@ -87,24 +100,12 @@ export default function TelaInicio() {
               marginBottom: 30,
             }}
           ></View>
+
+
+          <PeriodSwitch />
         </View>
 
         <ScrollView></ScrollView>
-
-        <View>
-          <View
-            style={{
-              position: "absolute",
-              zIndex: 2,
-              width: "100%",
-              alignItems: "center",
-              marginTop: 15,
-            }}
-          >
-            <Image source={require("@/assets/images/update.png")} />
-          </View>
-          <ButtonGeral backgroundColor="#7B6DD1" text="" />
-        </View>
       </View>
 
       <MenuBar />

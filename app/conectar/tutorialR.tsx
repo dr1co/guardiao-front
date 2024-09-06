@@ -1,7 +1,13 @@
-import { View, Text, useWindowDimensions, Image } from "react-native";
+import {
+  View,
+  Text,
+  useWindowDimensions,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import Logo from "@/components/Logo";
 import LoadingBar from "@/components/LoadingBar";
-import ButtonEscanear from "@/components/ButtonGeral"
+import ButtonEscanearQR from "@/components/ButtonEscanearQR";
 import ButtonBack from "@/components/ButtonBack";
 
 export default function TutorialResponsavel() {
@@ -17,7 +23,7 @@ export default function TutorialResponsavel() {
       }}
     >
       <View>
-        <Logo></Logo>
+        <Logo/>
       </View>
 
       <View
@@ -85,41 +91,165 @@ export default function TutorialResponsavel() {
               fontFamily: "IBM Plex Sans",
               fontWeight: "600",
               fontSize: 20,
+              textAlign: "center",
             }}
           >
             Como realizar a conexão?
           </Text>
-
-          <View style={{ flexDirection: "row", width: 309, marginBottom: 40, marginTop: 30 }}>
+          
+          <View>
             <View
-              style={{ backgroundColor: "#f48080", width: 3, height: 309 }}
-            ></View>
-            <View style={{ width: 280, marginLeft: 30, marginTop: 20 }}>
-              <Text style={{ color: "#9d9ea1", fontSize: 15, fontWeight: 500 }}>
-                <View style={{flexDirection: 'column'}}>
-                  <Text style={{marginBottom: 20}}>1. Instale o Guardião no dispositivo da criança.</Text>
-                  <Text style={{marginBottom: 20}}>
-                    2. Faça login no dispositivo da criança usando a mesma conta
-                    do dispositivo do responsável.
+              style={{
+                flexDirection: "row",
+                width: 310,
+                marginBottom: 35,
+                marginTop: 30,
+                backgroundColor: "white",
+                borderRadius: 50,
+                borderLeftColor: "#f48080",
+                borderLeftWidth: 5,
+                height: 330,
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <View
+                style={{
+                  width: 280,
+                  marginLeft: 20,
+                  marginTop: 10,
+                  flexDirection: "column",
+                }}
+              >
+                <Text
+                  style={{
+                    marginBottom: 10,
+                    color: "#9d9ea1",
+                    fontSize: 15,
+                    fontWeight: 500,
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 25,
+                      fontFamily: "B612 Mono, monospace",
+                      fontWeight: "bold",
+                      color: "#f48080",
+                    }}
+                  >
+                    1.
+                  </Text>{" "}
+                  Instale o
+                  <Text
+                    style={{
+                      color: "#8093f4",
+                      fontFamily: "B612 Mono, monospace",
+                    }}
+                  >
+                    {" "}
+                    Guardião
+                  </Text>{" "}
+                  no dispositivo da
+                  <Text style={{ color: "#f480d4" }}> criança</Text>.
+                </Text>
+                <Text
+                  style={{
+                    marginBottom: 10,
+                    color: "#9d9ea1",
+                    fontSize: 15,
+                    fontWeight: 500,
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 25,
+                      fontFamily: "B612 Mono, monospace",
+                      fontWeight: "bold",
+                      color: "#f48080",
+                    }}
+                  >
+                    2.
+                  </Text>{" "}
+                  Faça login no dispositivo da{" "}
+                  <Text style={{ color: "#f480d4" }}>utilizando</Text> a mesma
+                  conta do dispositivo do{" "}
+                  <Text style={{ color: "#f48080" }}>responsável</Text>.
+                </Text>
+                <Text
+                  style={{
+                    marginBottom: 10,
+                    color: "#9d9ea1",
+                    fontSize: 15,
+                    fontWeight: 500,
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 25,
+                      fontFamily: "B612 Mono, monospace",
+                      fontWeight: "bold",
+                      color: "#f48080",
+                    }}
+                  >
+                    3.
+                  </Text>{" "}
+                  Selecione a opção{" "}
+                  <Text style={{ color: "#f480d4", fontWeight: "bold" }}>
+                    CRIANÇA{" "}
                   </Text>
-                  <Text style={{marginBottom: 20}}>
-                    3. Selecione a opção CRIANÇA durante a configuração do
-                    Guardião no dispositivo da criança.
+                  durante a configuração do{" "}
+                  <Text
+                    style={{
+                      color: "#8093f4",
+                      fontFamily: "B612 Mono, monospace",
+                    }}
+                  >
+                    Guardião
+                  </Text>{" "}
+                  no dispositivo da{" "}
+                  <Text style={{ color: "#f480d4" }}>criança</Text>.
+                </Text>
+                <Text
+                  style={{ color: "#9d9ea1", fontSize: 15, fontWeight: 500 }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 25,
+                      fontFamily: "B612 Mono, monospace",
+                      fontWeight: "bold",
+                      color: "#f48080",
+                    }}
+                  >
+                    4.
+                  </Text>{" "}
+                  <Text>
+                    No dispositivo do{" "}
+                    <Text style={{ color: "#f48080" }}>responsável</Text>, abra
+                    o{" "}
+                    <Text
+                      style={{
+                        color: "#8093f4",
+                        fontFamily: "B612 Mono, monospace",
+                      }}
+                    >
+                      Guardião
+                    </Text>{" "}
+                    e escaneie o{" "}
+                    <Text style={{ fontWeight: "bold" }}>QR Code</Text> exibido
+                    no dispositivo da
+                    <Text style={{ color: "#f480d4" }}> criança</Text> para
+                    completar a conexão.
                   </Text>
-                  <Text style={{marginBottom: 20}}>
-                    4. No dispositivo do responsável, abra o Guardião e escaneie
-                    o QR Code exibido no dispositivo da criança para completar a
-                    conexão.
-                  </Text>
-                </View>
-              </Text>
+                </Text>
+              </View>
             </View>
           </View>
         </View>
         <View>
-          <ButtonEscanear backgroundColor="#f48080" text="ESCANEAR QR CODE" />
+          <ButtonEscanearQR />
         </View>
       </View>
     </View>
   );
 }
+

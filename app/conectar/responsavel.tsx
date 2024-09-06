@@ -72,7 +72,7 @@ export default function TelaPerfilResponsavel() {
         </View>
         <LoadingBar width={206} />
 
-        <View style={{marginBottom: 50}}>
+        <View style={{marginBottom: 30}}>
           {" "}
           <InputName
             imagePath={require("@/assets/images/User.png")}
@@ -81,7 +81,7 @@ export default function TelaPerfilResponsavel() {
             placeholderTextColor="#f48080"
           />
         </View>
-        <ButtonConfirmar text="CONFIRMAR" backgroundColor="#f48080" />
+        <ButtonConfirmar text="CONFIRMAR" backgroundColor="#f48080" width={332} height={66} />
       </View>
     </View>
   );
