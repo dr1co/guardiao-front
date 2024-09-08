@@ -86,8 +86,7 @@ export default function TelaPerfilCrianca() {
             da criança?
           </Text>
         </View>
-        <View style={{marginBottom: -10}}>
-          {" "}
+        <View style={{ marginBottom: -10 }}>
           <LoadingBar width={206} />
         </View>
         <View style={{ marginBottom: -20 }}>
@@ -98,9 +97,9 @@ export default function TelaPerfilCrianca() {
             placeholderTextColor="#f480d4"
           />
         </View>
-        <InputDOB/>
+        <InputDOB />
 
-        <Link href={'/conectar/tutorialC'}>
+        <Link href={"/conectar/tutorialC"}>
           <ButtonConfirmar text="CONFIRMAR" backgroundColor="#f480d4" />
         </Link>
       </View>

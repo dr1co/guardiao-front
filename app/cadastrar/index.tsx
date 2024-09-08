@@ -4,7 +4,6 @@ import {
   StyleSheet,
   Image,
   TouchableOpacity,
-  Pressable,
   useWindowDimensions,
 } from "react-native";
 import { Link } from "expo-router";
@@ -15,7 +14,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F48080",
+    backgroundColor: "#F480D4",
   },
   logo: {
     gap: 10,
@@ -73,8 +72,9 @@ const styles = StyleSheet.create({
   menuText: {
     width: "80%",
     fontFamily: "IBM Plex Sans, sans-serif",
-    color: "#F48080",
+    color: "#F480D4",
     fontSize: 20,
+    marginTop: 10,
     marginBottom: 50,
     fontWeight: "bold",
   },
@@ -103,10 +103,10 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 16,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#FFE1E1",
+    backgroundColor: "#FFC9F0",
     position: "absolute",
     left: 0,
-    bottom: 0,
+    bottom: 80,
     shadowColor: "black",
     shadowOffset: { width: 1, height: 1 },
     shadowOpacity: 0.3,
@@ -116,6 +116,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "80%",
     justifyContent: "space-between",
+    marginTop: 100,
   },
   footerText: {
     color: "#797979",
@@ -129,6 +130,7 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: "100%",
+    height: 200,
     justifyContent: "center",
     alignItems: "center",
     gap: 0,
@@ -166,50 +168,54 @@ export default function Index() {
 
       <View style={styles.menu}>
         <Text style={styles.menuText}>
-          Entrar no <Text style={{ color: "#7B6DD1" }}>Guardião</Text>.
+          Cadastrar-se no <Text style={{ color: "#7B6DD1" }}>Guardião</Text>.
         </Text>
 
         <View style={styles.inputContainer}>
           <InputName
             imagePath={require("@/assets/images/mail.svg")}
             placeholder="Digite o seu e-mail"
-            borderBottomColor="#f48080"
-            placeholderTextColor="#f48080"
+            borderBottomColor="#F480D4"
+            placeholderTextColor="#F480D4"
           />
 
           <InputName
             imagePath={require("@/assets/images/key.svg")}
             placeholder="Digite a sua senha"
-            borderBottomColor="#f48080"
-            placeholderTextColor="#f48080"
+            borderBottomColor="#F480D4"
+            placeholderTextColor="#F480D4"
           />
-          <TouchableOpacity>
-            <Text style={styles.inputText}>Esqueceu a senha?</Text>
-          </TouchableOpacity>
 
-          <TouchableOpacity style={styles.backButton}>
-            <Link style={styles.linkContainer} href="/">
-              <Image
-                source={require("@/assets/images/seta_esq_vermelha.svg")}
-              />
-              <Text
-                style={{
-                  ...styles.buttonText,
-                  color: "#F48080",
-                }}
-              >
-                {" "}
-                VOLTAR{" "}
-              </Text>
-            </Link>
-          </TouchableOpacity>
+          <InputName
+            imagePath={require("@/assets/images/key.svg")}
+            placeholder="Confirme a sua senha"
+            borderBottomColor="#F480D4"
+            placeholderTextColor="#F480D4"
+          />
         </View>
 
-        <Link style={styles.linkContainer} href="/conectar" asChild>
-          <Pressable style={{ ...styles.button, backgroundColor: "#F48080" }}>
-            <Text style={styles.buttonText}> ENTRAR </Text>
-          </Pressable>
-        </Link>
+        <TouchableOpacity
+          style={{ ...styles.button, backgroundColor: "#F480D4" }}
+        >
+          <Link style={styles.linkContainer} href="/conectar">
+            <Text style={styles.buttonText}> ENVIAR CADASTRO </Text>
+          </Link>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.backButton}>
+          <Link style={styles.linkContainer} href="/">
+            <Image source={require("@/assets/images/seta_esq_rosa.svg")} />
+            <Text
+              style={{
+                ...styles.buttonText,
+                color: "#F480D4",
+              }}
+            >
+              {" "}
+              VOLTAR{" "}
+            </Text>
+          </Link>
+        </TouchableOpacity>
 
         <View style={styles.footer}>
           <Text
