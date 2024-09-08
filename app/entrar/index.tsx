@@ -72,6 +72,7 @@ const styles = StyleSheet.create({
   },
   menuText: {
     width: "80%",
+    marginTop: 10,
     fontFamily: "IBM Plex Sans, sans-serif",
     color: "#F48080",
     fontSize: 20,
@@ -106,7 +107,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFE1E1",
     position: "absolute",
     left: 0,
-    bottom: 0,
+    bottom: 80,
     shadowColor: "black",
     shadowOffset: { width: 1, height: 1 },
     shadowOpacity: 0.3,
@@ -116,6 +117,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "80%",
     justifyContent: "space-between",
+    marginTop: 100,
   },
   footerText: {
     color: "#797979",
@@ -186,23 +188,6 @@ export default function Index() {
           <TouchableOpacity>
             <Text style={styles.inputText}>Esqueceu a senha?</Text>
           </TouchableOpacity>
-
-          <TouchableOpacity style={styles.backButton}>
-            <Link style={styles.linkContainer} href="/">
-              <Image
-                source={require("@/assets/images/seta_esq_vermelha.svg")}
-              />
-              <Text
-                style={{
-                  ...styles.buttonText,
-                  color: "#F48080",
-                }}
-              >
-                {" "}
-                VOLTAR{" "}
-              </Text>
-            </Link>
-          </TouchableOpacity>
         </View>
 
         <Link style={styles.linkContainer} href="/conectar" asChild>
@@ -210,6 +195,21 @@ export default function Index() {
             <Text style={styles.buttonText}> ENTRAR </Text>
           </Pressable>
         </Link>
+
+        <TouchableOpacity style={styles.backButton}>
+          <Link style={styles.linkContainer} href="/">
+            <Image source={require("@/assets/images/seta_esq_vermelha.svg")} />
+            <Text
+              style={{
+                ...styles.buttonText,
+                color: "#F48080",
+              }}
+            >
+              {" "}
+              VOLTAR{" "}
+            </Text>
+          </Link>
+        </TouchableOpacity>
 
         <View style={styles.footer}>
           <Text
