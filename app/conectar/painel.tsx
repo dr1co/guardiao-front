@@ -96,6 +96,7 @@ export default function TelaPainel() {
             }}
           ></View>
 
+
           <PeriodSwitch />
         </View>
 
