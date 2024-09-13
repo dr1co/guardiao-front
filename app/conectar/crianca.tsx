@@ -23,7 +23,7 @@ export default function TelaPerfilCrianca() {
         <Logo />
       </View>
 
-      <View style={{ position: "absolute", zIndex: 1, marginTop: 210 }}>
+      <View style={{ position: "absolute", zIndex: 1, marginTop: 160 }}>
         <Image source={require("@/assets/images/family.png")} />
       </View>
 
