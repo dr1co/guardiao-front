@@ -22,7 +22,7 @@ export default function Logo() {
       }}
     >
       <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <Image source={require("@/assets/images/logo.svg")} />
+        <Image style={{width: 50, height: 50, resizeMode: 'cover'}} source={require("@/assets/images/logo.png")} />
         <View
           style={{
             borderBottomColor: "white",

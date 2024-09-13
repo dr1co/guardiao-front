@@ -87,7 +87,6 @@ export default function TelaPerfilCrianca() {
           </Text>
         </View>
         <View style={{marginBottom: -10}}>
-          {" "}
           <LoadingBar width={206} />
         </View>
         <View style={{ marginBottom: -20 }}>
