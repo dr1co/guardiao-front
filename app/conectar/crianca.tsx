@@ -23,7 +23,7 @@ export default function TelaPerfilCrianca() {
         <Logo />
       </View>
 
-      <View style={{ position: "absolute", zIndex: 1, marginTop: 210 }}>
+      <View style={{ position: "absolute", zIndex: 1, marginTop: 160 }}>
         <Image source={require("@/assets/images/family.png")} />
       </View>
 
@@ -86,7 +86,7 @@ export default function TelaPerfilCrianca() {
             da criança?
           </Text>
         </View>
-        <View style={{ marginBottom: -10 }}>
+        <View style={{marginBottom: -10}}>
           <LoadingBar width={206} />
         </View>
         <View style={{ marginBottom: -20 }}>
