@@ -97,9 +97,9 @@ export default function TelaPerfilCrianca() {
             placeholderTextColor="#f480d4"
           />
         </View>
-        <InputDOB/>
+        <InputDOB />
 
-        <Link href={'/conectar/tutorialC'}>
+        <Link href={"/conectar/tutorialC"}>
           <ButtonConfirmar text="CONFIRMAR" backgroundColor="#f480d4" />
         </Link>
       </View>
