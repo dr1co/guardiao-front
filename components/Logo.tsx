@@ -5,6 +5,7 @@ import {
   useWindowDimensions,
   TouchableOpacity,
 } from "react-native";
+import { Link } from "expo-router";
 
 export default function Logo() {
   const { width, height } = useWindowDimensions();
@@ -22,7 +23,10 @@ export default function Logo() {
       }}
     >
       <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <Image style={{width: 50, height: 50, resizeMode: 'cover'}} source={require("@/assets/images/logo.png")} />
+        <Image
+          style={{ width: 50, height: 50, resizeMode: "cover" }}
+          source={require("@/assets/images/logo.png")}
+        />
         <View
           style={{
             borderBottomColor: "white",
@@ -44,9 +48,11 @@ export default function Logo() {
       </View>
 
       <View>
-        <TouchableOpacity>
-          <Image source={require("@/assets/images/Logout.png")} />
-        </TouchableOpacity>
+        <Link href={'/'}>
+          <TouchableOpacity>
+            <Image source={require("@/assets/images/Logout.png")} />
+          </TouchableOpacity>
+        </Link>
       </View>
     </View>
   );

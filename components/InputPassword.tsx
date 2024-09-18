@@ -10,8 +10,8 @@ type InputParameters = {
 }
 
 export default function InputName(props: InputParameters) { 
-  function handleOnChange(text: string) {
-    props.setVar(text);
+  function handleOnChange(propName: string) {
+    props.setVar(propName);
   }
   return (
     <View style={{ flexDirection: "row" }}>
@@ -31,8 +31,8 @@ export default function InputName(props: InputParameters) {
         }}
         placeholder={props.placeholder}
         placeholderTextColor={props.placeholderTextColor}
-        keyboardType="visible-password"
         onChange={(e) => {handleOnChange(e.nativeEvent.text)}}
+        secureTextEntry={true}
       />
 
       <View style={{ position: "absolute", marginLeft: 290, marginTop: 15 }}>

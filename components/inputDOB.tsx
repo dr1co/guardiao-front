@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Dispatch, SetStateAction } from "react";
 import {
   View,
   Image,
@@ -38,10 +38,14 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function inputDOB() {
+interface DOBProps {
+  date: string | undefined,
+  setDate: Dispatch<SetStateAction<string | undefined>>
+}
+
+export default function inputDOB(props: DOBProps) {
 
   const [open, setOpen] = useState(false); // open and colses the modal
-  const [date, setDate] = useState<string>();
   const [textDate, setTextDate] = useState("Selecione a data de nascimento.")
 
   function handleOnPress() {
@@ -49,7 +53,7 @@ export default function inputDOB() {
   }
 
   function handleOnChange(propDate: string) {
-    setDate(propDate);
+    props.setDate(propDate);
 
     const formattedDate = format(new Date(propDate), 'dd/MM/yyyy');
     setTextDate(formattedDate);
@@ -103,7 +107,7 @@ export default function inputDOB() {
             
             mode='calendar'
             locale="pt-BR"
-            selected={date}
+            selected={props.date}
             onDateChange={(e) => {
               handleOnChange(e);
             }}

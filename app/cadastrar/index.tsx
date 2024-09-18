@@ -8,8 +8,11 @@ import {
 } from "react-native";
 import { Link } from "expo-router";
 import InputName from "@/components/InputName";
+import { useState } from "react";
+import InputPassword from "@/components/InputPassword";
 
 const styles = StyleSheet.create({
+
   screen: {
     flex: 1,
     justifyContent: "center",
@@ -146,6 +149,10 @@ const styles = StyleSheet.create({
 
 export default function Index() {
   const { width, height } = useWindowDimensions();
+  const [name, setName] = useState<string>();
+  const [password, setPassword] = useState<string>();
+  const [confirmedPassword, setConfirmedPassword] = useState<string>();
+
 
   return (
     <View style={{ ...styles.screen, width, height }}>
@@ -177,20 +184,24 @@ export default function Index() {
             placeholder="Digite o seu e-mail"
             borderBottomColor="#F480D4"
             placeholderTextColor="#F480D4"
+            setVar={setName}
+
           />
 
-          <InputName
+          <InputPassword
             imagePath={require("@/assets/images/key.svg")}
             placeholder="Digite a sua senha"
             borderBottomColor="#F480D4"
             placeholderTextColor="#F480D4"
+            setVar={setPassword}
           />
 
-          <InputName
+          <InputPassword
             imagePath={require("@/assets/images/key.svg")}
             placeholder="Confirme a sua senha"
             borderBottomColor="#F480D4"
             placeholderTextColor="#F480D4"
+            setVar={setConfirmedPassword}
           />
         </View>
 

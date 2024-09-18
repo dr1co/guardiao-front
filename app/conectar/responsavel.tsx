@@ -5,9 +5,13 @@ import LoadingBar from "@/components/LoadingBar";
 import ButtonBack from "@/components/ButtonBack";
 import InputName from "@/components/InputName";
 import {Link} from "expo-router";
+import { useState } from "react";
 
 export default function TelaPerfilResponsavel() {
   const { width, height } = useWindowDimensions();
+  const [name, setName] = useState<string>();
+
+  console.log(name);
 
   return (
     <View
@@ -73,12 +77,12 @@ export default function TelaPerfilResponsavel() {
         <LoadingBar width={206} />
 
         <View style={{marginBottom: 30}}>
-          {" "}
           <InputName
             imagePath={require("@/assets/images/User.png")}
             placeholder="Digite seu nome."
             borderBottomColor="#f48080"
             placeholderTextColor="#f48080"
+            setVar={setName}
           />
         </View>
         <ButtonConfirmar text="CONFIRMAR" backgroundColor="#f48080" width={332} height={66} />

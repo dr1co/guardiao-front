@@ -6,8 +6,12 @@ import InputName from "@/components/InputName";
 import ButtonConfirmar from "@/components/ButtonConfirmar";
 import InputDOB from "@/components/inputDOB";
 import { Link } from "expo-router";
+import { useState } from "react";
 
 export default function TelaPerfilCrianca() {
+  // Setando variáveis a partir das props nos componentes 
+  const [name, setName] = useState<string>();
+  const [date, setDate] = useState<string>();
   const { width, height } = useWindowDimensions();
 
   return (
@@ -95,9 +99,10 @@ export default function TelaPerfilCrianca() {
             placeholder="Digite o nome."
             borderBottomColor="#f480d4"
             placeholderTextColor="#f480d4"
+            setVar={setName}
           />
         </View>
-        <InputDOB />
+        <InputDOB date={date} setDate={setDate} />
 
         <Link href={"/conectar/tutorialC"}>
           <ButtonConfirmar text="CONFIRMAR" backgroundColor="#f480d4" />
