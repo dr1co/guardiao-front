@@ -7,7 +7,7 @@ import {
   useWindowDimensions,
 } from "react-native";
 import { Link } from "expo-router";
-import InputName from "@/components/InputName";
+import InputEmail from "@/components/InputEmail";
 import { useState } from "react";
 import InputPassword from "@/components/InputPassword";
 
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
 
 export default function Index() {
   const { width, height } = useWindowDimensions();
-  const [name, setName] = useState<string>();
+  const [email, setEmail] = useState<string>();
   const [password, setPassword] = useState<string>();
   const [confirmedPassword, setConfirmedPassword] = useState<string>();
 
@@ -182,12 +182,12 @@ export default function Index() {
         </Text>
 
         <View style={styles.inputContainer}>
-          <InputName
+          <InputEmail
             imagePath={require("@/assets/images/mail.svg")}
             placeholder="Digite o seu e-mail"
             borderBottomColor="#F480D4"
             placeholderTextColor="#F480D4"
-            setVar={setName}
+            setVar={setEmail}
           />
           <View
             style={{

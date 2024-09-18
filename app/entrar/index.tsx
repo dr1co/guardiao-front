@@ -8,7 +8,7 @@ import {
   useWindowDimensions,
 } from "react-native";
 import { Link } from "expo-router";
-import InputName from "@/components/InputName";
+import InputEmail from "@/components/InputEmail";
 import InputPassword from "@/components/InputPassword";
 import { useState } from "react";
 
@@ -177,7 +177,7 @@ export default function Index() {
         </Text>
 
         <View style={styles.inputContainer}>
-          <InputName
+          <InputEmail
             imagePath={require("@/assets/images/mail.svg")}
             placeholder="Digite o seu e-mail"
             borderBottomColor="#f48080"
