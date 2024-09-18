@@ -145,10 +145,10 @@ const styles = StyleSheet.create({
     textDecorationLine: "underline",
   },
   textRules: {
-      color: "#9d9ea1",
-      fontSize: 15,
-      fontWeight: 500,
-  }
+    color: "#9d9ea1",
+    fontSize: 15,
+    fontWeight: 500,
+  },
 });
 
 export default function Index() {
@@ -191,24 +191,36 @@ export default function Index() {
           />
           <View
             style={{
-              backgroundColor: "#fff",
+              backgroundColor: "#FFE1F0",
               padding: 15,
               borderRadius: 16,
               borderLeftWidth: 5,
               borderLeftColor: "#F480D4",
               marginTop: -20,
               marginBottom: 20,
+              shadowColor: "black",
+              shadowOffset: { width: 1, height: 1 },
+              shadowOpacity: 0.3,
+              shadowRadius: 3,
+              width: 332
             }}
           >
-            
-              <Text style={{fontSize: 15, fontWeight: 500, marginBottom: 10, }}>Crie uma senha com no mínimo:</Text>
-              <Text style={styles.textRules}>
-                - 8 caracteres
-              </Text>
-              <Text style={styles.textRules}>- 1 letra maiúscula (A-Z)</Text>
-              <Text style={styles.textRules}>- 1 número (0-9)</Text>
-              <Text style={styles.textRules}>- 1 caractere especial (@, #, $, %, &, *)</Text>
-            
+            <Text
+              style={{
+                fontSize: 15,
+                fontWeight: "bold",
+                marginBottom: 10,
+                color: "#F480D4",
+              }}
+            >
+              Crie uma senha com no mínimo:
+            </Text>
+            <Text style={styles.textRules}>- 8 caracteres</Text>
+            <Text style={styles.textRules}>- 1 letra maiúscula (A-Z)</Text>
+            <Text style={styles.textRules}>- 1 número (0-9)</Text>
+            <Text style={styles.textRules}>
+              - 1 caractere especial (@, #, $, %, &, *)
+            </Text>
           </View>
 
           <InputPassword
