@@ -12,7 +12,6 @@ import { useState } from "react";
 import InputPassword from "@/components/InputPassword";
 
 const styles = StyleSheet.create({
-
   screen: {
     flex: 1,
     justifyContent: "center",
@@ -78,7 +77,7 @@ const styles = StyleSheet.create({
     color: "#F480D4",
     fontSize: 20,
     marginTop: 10,
-    marginBottom: 50,
+    marginBottom: 100,
     fontWeight: "bold",
   },
   button: {
@@ -133,7 +132,7 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: "100%",
-    height: 200,
+    height: 250,
     justifyContent: "center",
     alignItems: "center",
     gap: 0,
@@ -145,6 +144,11 @@ const styles = StyleSheet.create({
     color: "#8093F4",
     textDecorationLine: "underline",
   },
+  textRules: {
+      color: "#9d9ea1",
+      fontSize: 15,
+      fontWeight: 500,
+  }
 });
 
 export default function Index() {
@@ -152,7 +156,6 @@ export default function Index() {
   const [name, setName] = useState<string>();
   const [password, setPassword] = useState<string>();
   const [confirmedPassword, setConfirmedPassword] = useState<string>();
-
 
   return (
     <View style={{ ...styles.screen, width, height }}>
@@ -185,8 +188,28 @@ export default function Index() {
             borderBottomColor="#F480D4"
             placeholderTextColor="#F480D4"
             setVar={setName}
-
           />
+          <View
+            style={{
+              backgroundColor: "#fff",
+              padding: 15,
+              borderRadius: 16,
+              borderLeftWidth: 5,
+              borderLeftColor: "#F480D4",
+              marginTop: -20,
+              marginBottom: 20,
+            }}
+          >
+            
+              <Text style={{fontSize: 15, fontWeight: 500, marginBottom: 10, }}>Crie uma senha com no mínimo:</Text>
+              <Text style={styles.textRules}>
+                - 8 caracteres
+              </Text>
+              <Text style={styles.textRules}>- 1 letra maiúscula (A-Z)</Text>
+              <Text style={styles.textRules}>- 1 número (0-9)</Text>
+              <Text style={styles.textRules}>- 1 caractere especial (@, #, $, %, &, *)</Text>
+            
+          </View>
 
           <InputPassword
             imagePath={require("@/assets/images/key.svg")}
@@ -195,14 +218,15 @@ export default function Index() {
             placeholderTextColor="#F480D4"
             setVar={setPassword}
           />
-
-          <InputPassword
-            imagePath={require("@/assets/images/key.svg")}
-            placeholder="Confirme a sua senha"
-            borderBottomColor="#F480D4"
-            placeholderTextColor="#F480D4"
-            setVar={setConfirmedPassword}
-          />
+          <View style={{ marginTop: -25, marginBottom: 50 }}>
+            <InputPassword
+              imagePath={require("@/assets/images/key.svg")}
+              placeholder="Confirme a sua senha"
+              borderBottomColor="#F480D4"
+              placeholderTextColor="#F480D4"
+              setVar={setConfirmedPassword}
+            />
+          </View>
         </View>
 
         <TouchableOpacity
