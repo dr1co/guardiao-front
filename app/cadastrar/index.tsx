@@ -10,6 +10,7 @@ import { Link } from "expo-router";
 import InputEmail from "@/components/InputEmail";
 import { useState } from "react";
 import InputPassword from "@/components/InputPassword";
+import InputConfirmPassword from "@/components/InputConfirmPassword";
 
 const styles = StyleSheet.create({
   screen: {
@@ -231,12 +232,13 @@ export default function Index() {
             setVar={setPassword}
           />
           <View style={{ marginTop: -25, marginBottom: 50 }}>
-            <InputPassword
+            <InputConfirmPassword
               imagePath={require("@/assets/images/key.svg")}
               placeholder="Confirme a sua senha"
               borderBottomColor="#F480D4"
               placeholderTextColor="#F480D4"
               setVar={setConfirmedPassword}
+              inputPassword={password}
             />
           </View>
         </View>

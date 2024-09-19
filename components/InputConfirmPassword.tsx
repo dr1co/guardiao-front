@@ -6,17 +6,17 @@ type InputParameters = {
   placeholderTextColor: string,
   placeholder: string,
   imagePath: object,
-  setVar: Dispatch<SetStateAction<string | undefined>>
+  setVar: Dispatch<SetStateAction<string | undefined>>,
+  inputPassword: string | undefined
 }
 
-export default function InputPassword(props: InputParameters) { 
+export default function InputConfirmPassword(props: InputParameters) { 
   const [isValid, setValid] = useState(false);
-  const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+=\-{}|~.])[A-Za-z\d!@#$%^&*()_+=\-{}|~.]{8,}$/;
 
   function handleOnChange(password: string) {
     props.setVar(password);
 
-    if (password.match(passwordRegex)) {
+    if (password === props.inputPassword) {
       setValid(true);
     } else {
       setValid(false);
