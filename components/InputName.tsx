@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import{ TextInput, View, Image } from 'react-native';
 
 type InputParameters = {
@@ -10,8 +10,16 @@ type InputParameters = {
 }
 
 export default function InputName(props: InputParameters) { 
+  const [isValid, setIsValid] = useState(false);
+
   function handleOnChange(text: string) {
     props.setVar(text);
+
+    if (text.length > 0) {
+      setIsValid(true);
+    } else {
+      setIsValid(false);
+    }
   }
   return (
     <View style={{ flexDirection: "row" }}>
@@ -32,11 +40,12 @@ export default function InputName(props: InputParameters) {
         placeholder={props.placeholder}
         placeholderTextColor={props.placeholderTextColor}
         keyboardType="visible-password"
+        maxLength={40}
         onChange={(e) => {handleOnChange(e.nativeEvent.text)}}
       />
 
       <View style={{ position: "absolute", marginLeft: 290, marginTop: 15 }}>
-        <Image source={require("@/assets/images/ok_verde.png")} />
+        <Image source={isValid? require('@/assets/images/ok_verde.png') : require("@/assets/images/ok_cinza.png")} />
       </View>
     </View>
   );

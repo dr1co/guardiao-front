@@ -9,17 +9,17 @@ type InputParameters = {
   setVar: Dispatch<SetStateAction<string | undefined>>
 }
 
-export default function InputPassword(props: InputParameters) { 
-  const [isValid, setValid] = useState(false);
-  const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+=\-{}|~.])[A-Za-z\d!@#$%^&*()_+=\-{}|~.]{8,}$/;
+export default function InputName(props: InputParameters) { 
+  const [isValid, setIsValid] = useState(false);
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-  function handleOnChange(password: string) {
-    props.setVar(password);
+  function handleOnChange(text: string) {
+    props.setVar(text);
 
-    if (password.match(passwordRegex)) {
-      setValid(true);
+    if (text.match(emailRegex)) {
+      setIsValid(true);
     } else {
-      setValid(false);
+      setIsValid(false);
     }
   }
   return (
@@ -40,15 +40,17 @@ export default function InputPassword(props: InputParameters) {
         }}
         placeholder={props.placeholder}
         placeholderTextColor={props.placeholderTextColor}
+        keyboardType="visible-password"
+        maxLength={40}
         onChange={(e) => {handleOnChange(e.nativeEvent.text)}}
-        secureTextEntry={true}
       />
 
       <View style={{ position: "absolute", marginLeft: 290, marginTop: 15 }}>
-        <Image source={isValid? require("@/assets/images/ok_verde.png") : require('@/assets/images/ok_cinza.png')} />
+        <Image source={isValid? require('@/assets/images/ok_verde.png') : require("@/assets/images/ok_cinza.png")} />
       </View>
     </View>
   );
 
 };
 
+ 

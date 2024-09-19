@@ -7,12 +7,12 @@ import {
   useWindowDimensions,
 } from "react-native";
 import { Link } from "expo-router";
-import InputName from "@/components/InputName";
+import InputEmail from "@/components/InputEmail";
 import { useState } from "react";
 import InputPassword from "@/components/InputPassword";
+import InputConfirmPassword from "@/components/InputConfirmPassword";
 
 const styles = StyleSheet.create({
-
   screen: {
     flex: 1,
     justifyContent: "center",
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     color: "#F480D4",
     fontSize: 20,
     marginTop: 10,
-    marginBottom: 50,
+    marginBottom: 100,
     fontWeight: "bold",
   },
   button: {
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: "100%",
-    height: 200,
+    height: 250,
     justifyContent: "center",
     alignItems: "center",
     gap: 0,
@@ -145,14 +145,18 @@ const styles = StyleSheet.create({
     color: "#8093F4",
     textDecorationLine: "underline",
   },
+  textRules: {
+    color: "#9d9ea1",
+    fontSize: 15,
+    fontWeight: 500,
+  },
 });
 
 export default function Index() {
   const { width, height } = useWindowDimensions();
-  const [name, setName] = useState<string>();
+  const [email, setEmail] = useState<string>();
   const [password, setPassword] = useState<string>();
   const [confirmedPassword, setConfirmedPassword] = useState<string>();
-
 
   return (
     <View style={{ ...styles.screen, width, height }}>
@@ -179,14 +183,46 @@ export default function Index() {
         </Text>
 
         <View style={styles.inputContainer}>
-          <InputName
+          <InputEmail
             imagePath={require("@/assets/images/mail.svg")}
             placeholder="Digite o seu e-mail"
             borderBottomColor="#F480D4"
             placeholderTextColor="#F480D4"
-            setVar={setName}
-
+            setVar={setEmail}
           />
+          <View
+            style={{
+              backgroundColor: "#FFE1F0",
+              padding: 15,
+              borderRadius: 16,
+              borderLeftWidth: 5,
+              borderLeftColor: "#F480D4",
+              marginTop: -20,
+              marginBottom: 20,
+              shadowColor: "black",
+              shadowOffset: { width: 1, height: 1 },
+              shadowOpacity: 0.3,
+              shadowRadius: 3,
+              width: 332
+            }}
+          >
+            <Text
+              style={{
+                fontSize: 15,
+                fontWeight: "bold",
+                marginBottom: 10,
+                color: "#F480D4",
+              }}
+            >
+              Crie uma senha com no mínimo:
+            </Text>
+            <Text style={styles.textRules}>- 8 caracteres</Text>
+            <Text style={styles.textRules}>- 1 letra maiúscula (A-Z)</Text>
+            <Text style={styles.textRules}>- 1 número (0-9)</Text>
+            <Text style={styles.textRules}>
+              - 1 caractere especial (@, #, $, %, &, *)
+            </Text>
+          </View>
 
           <InputPassword
             imagePath={require("@/assets/images/key.svg")}
@@ -195,14 +231,16 @@ export default function Index() {
             placeholderTextColor="#F480D4"
             setVar={setPassword}
           />
-
-          <InputPassword
-            imagePath={require("@/assets/images/key.svg")}
-            placeholder="Confirme a sua senha"
-            borderBottomColor="#F480D4"
-            placeholderTextColor="#F480D4"
-            setVar={setConfirmedPassword}
-          />
+          <View style={{ marginTop: -25, marginBottom: 50 }}>
+            <InputConfirmPassword
+              imagePath={require("@/assets/images/key.svg")}
+              placeholder="Confirme a sua senha"
+              borderBottomColor="#F480D4"
+              placeholderTextColor="#F480D4"
+              setVar={setConfirmedPassword}
+              inputPassword={password}
+            />
+          </View>
         </View>
 
         <TouchableOpacity
