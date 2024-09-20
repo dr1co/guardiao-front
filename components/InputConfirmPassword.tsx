@@ -14,9 +14,8 @@ export default function InputConfirmPassword(props: InputParameters) {
   const [isValid, setValid] = useState(false);
 
   function handleOnChange(password: string) {
-    props.setVar(password);
-
     if (password === props.inputPassword) {
+      props.setVar(password);
       setValid(true);
     } else {
       setValid(false);

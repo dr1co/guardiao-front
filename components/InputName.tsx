@@ -11,11 +11,13 @@ type InputParameters = {
 
 export default function InputName(props: InputParameters) { 
   const [isValid, setIsValid] = useState(false);
+  const nameRegex = /^[a-zA-Z]+$/;
+
 
   function handleOnChange(text: string) {
-    props.setVar(text);
 
-    if (text.length > 0) {
+    if (text.length > 0 && text.match(nameRegex)) {
+      props.setVar(text);
       setIsValid(true);
     } else {
       setIsValid(false);
@@ -39,7 +41,7 @@ export default function InputName(props: InputParameters) {
         }}
         placeholder={props.placeholder}
         placeholderTextColor={props.placeholderTextColor}
-        keyboardType="visible-password"
+        keyboardType="default"
         maxLength={40}
         onChange={(e) => {handleOnChange(e.nativeEvent.text)}}
       />

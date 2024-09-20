@@ -14,9 +14,9 @@ export default function InputPassword(props: InputParameters) {
   const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+=\-{}|~.])[A-Za-z\d!@#$%^&*()_+=\-{}|~.]{8,}$/;
 
   function handleOnChange(password: string) {
-    props.setVar(password);
 
     if (password.match(passwordRegex)) {
+      props.setVar(password);
       setValid(true);
     } else {
       setValid(false);
