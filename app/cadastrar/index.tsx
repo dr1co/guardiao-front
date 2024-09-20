@@ -11,6 +11,8 @@ import InputEmail from "@/components/InputEmail";
 import { useState } from "react";
 import InputPassword from "@/components/InputPassword";
 import InputConfirmPassword from "@/components/InputConfirmPassword";
+import { createRegister } from "@/api/axiosInstance";
+import { router } from "expo-router";
 
 const styles = StyleSheet.create({
   screen: {
@@ -158,6 +160,20 @@ export default function Index() {
   const [password, setPassword] = useState<string>();
   const [confirmedPassword, setConfirmedPassword] = useState<string>();
 
+  const handleRegister = async () => {
+    if (email && password && confirmedPassword) {
+      try {
+        const data = { email, password };
+        const result = await createRegister(data);
+        alert("Usuário criado com sucesso!");
+
+        router.navigate("/conectar");
+      } catch (error: any) {
+        alert("Erro ao criar usuário! " + error.message);
+      }
+    }
+  };
+
   return (
     <View style={{ ...styles.screen, width, height }}>
       <View style={styles.logo}>
@@ -203,7 +219,7 @@ export default function Index() {
               shadowOffset: { width: 1, height: 1 },
               shadowOpacity: 0.3,
               shadowRadius: 3,
-              width: 332
+              width: 332,
             }}
           >
             <Text
@@ -245,10 +261,9 @@ export default function Index() {
 
         <TouchableOpacity
           style={{ ...styles.button, backgroundColor: "#F480D4" }}
+          onPress={handleRegister}
         >
-          <Link style={styles.linkContainer} href="/conectar">
-            <Text style={styles.buttonText}> ENVIAR CADASTRO </Text>
-          </Link>
+          <Text style={styles.buttonText}> ENVIAR CADASTRO </Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.backButton}>

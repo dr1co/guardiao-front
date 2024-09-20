@@ -14,9 +14,8 @@ export default function InputName(props: InputParameters) {
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
   function handleOnChange(text: string) {
-    props.setVar(text);
-
     if (text.match(emailRegex)) {
+      props.setVar(text);
       setIsValid(true);
     } else {
       setIsValid(false);
