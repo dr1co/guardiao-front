@@ -11,6 +11,8 @@ import { Link } from "expo-router";
 import InputEmail from "@/components/InputEmail";
 import InputPassword from "@/components/InputPassword";
 import { useState } from "react";
+import { readUserLogin } from "@/api/axiosInstance";
+import { router } from "expo-router";
 
 const styles = StyleSheet.create({
   screen: {
@@ -149,8 +151,26 @@ const styles = StyleSheet.create({
 export default function Index() {
   const { width, height } = useWindowDimensions();
   const [email, setEmail] = useState<string>();
+  const [password, setPassword] = useState<string>();
 
   console.log(email);
+
+  const handleRegister = async () => {
+    if (email && password) {
+      try {
+        const data = { email, password };
+        const result = await readUserLogin(data);
+        alert("Login efetuado com sucesso!");
+        router.navigate("/conectar/inicio");
+
+
+      } catch (error: any) {
+        alert("Erro ao efetuar login: " + error.message); 
+      }
+    } else {
+      alert("Por favor, preencha todos os campos.");
+    }
+  }
 
   return (
     <View style={{ ...styles.screen, width, height }}>
@@ -190,7 +210,7 @@ export default function Index() {
             placeholder="Digite a sua senha"
             borderBottomColor="#f48080"
             placeholderTextColor="#f48080"
-            setVar={setEmail}
+            setVar={setPassword}
           />
 
           <TouchableOpacity>
@@ -198,11 +218,9 @@ export default function Index() {
           </TouchableOpacity>
         </View>
 
-        <Link style={styles.linkContainer} href="/conectar" asChild>
-          <Pressable style={{ ...styles.button, backgroundColor: "#F48080" }}>
+          <Pressable style={{ ...styles.button, backgroundColor: "#F48080" }} onPress={handleRegister}>
             <Text style={styles.buttonText}> ENTRAR </Text>
           </Pressable>
-        </Link>
 
         <TouchableOpacity style={styles.backButton}>
           <Link style={styles.linkContainer} href="/">
@@ -213,8 +231,7 @@ export default function Index() {
                 color: "#F48080",
               }}
             >
-              {" "}
-              VOLTAR{" "}
+              VOLTAR
             </Text>
           </Link>
         </TouchableOpacity>

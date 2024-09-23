@@ -19,7 +19,6 @@ export default function TelaPerfilCrianca() {
     if (name && date) {
       try {
         const data = { name, dob: date }; // deve conter mesmo nome no back-end
-        console.log(typeof date, date);
         const result = await createChildRegister(data);
         alert('Criança criada com sucesso!');
         router.navigate("/conectar/tutorialC");

@@ -3,27 +3,11 @@ import { View, useWindowDimensions, Image, Text } from 'react-native';
 import ButtonsTop from '@/components/ButtonsTop';
 import ButtonCriancas from '@/components/ButtonCriancas';
 import ButtonGeral from '@/components/ButtonGeral';
-import axiosInstance from '@/api/axiosInstance';
 import { useEffect, useState } from 'react';
 
 export default function TelaInicio() {
   const { width, height } = useWindowDimensions();
   const [userName, setUserName] = useState('');
-
-  useEffect(() => {
-    axiosInstance.get('/user/1')
-    .then(response => {
-      const rows = response.data.rows;
-      if (rows && rows.length > 0) {
-        const userName = rows[0].name;
-        setUserName(userName);
-      }
-    })
-    .catch(error => {
-      console.error(error);
-    });
-  },[]);
-
 
   return (
     <View
