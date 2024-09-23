@@ -11,7 +11,7 @@ import InputEmail from "@/components/InputEmail";
 import { useState } from "react";
 import InputPassword from "@/components/InputPassword";
 import InputConfirmPassword from "@/components/InputConfirmPassword";
-import { createRegister } from "@/api/axiosInstance";
+import { createUserRegister } from "@/api/axiosInstance";
 import { router } from "expo-router";
 
 const styles = StyleSheet.create({
@@ -164,7 +164,7 @@ export default function Index() {
     if (email && password && confirmedPassword) {
       try {
         const data = { email, password };
-        const result = await createRegister(data);
+        const result = await createUserRegister(data);
         alert("Usuário criado com sucesso!");
 
         router.navigate("/conectar");

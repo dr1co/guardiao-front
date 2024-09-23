@@ -5,14 +5,32 @@ import ButtonBack from "@/components/ButtonBack";
 import InputName from "@/components/InputName";
 import ButtonConfirmar from "@/components/ButtonConfirmar";
 import InputDOB from "@/components/inputDOB";
-import { Link } from "expo-router";
+import { router } from "expo-router";
 import { useState } from "react";
+import { createChildRegister } from "@/api/axiosInstance";
 
 export default function TelaPerfilCrianca() {
   // Setando variáveis a partir das props nos componentes 
   const [name, setName] = useState<string>();
   const [date, setDate] = useState<string>();
   const { width, height } = useWindowDimensions();
+
+  const handleRegister = async () => {
+    if (name && date) {
+      try {
+        const data = { name, dob: date }; // deve conter mesmo nome no back-end
+        console.log(typeof date, date);
+        const result = await createChildRegister(data);
+        alert('Criança criada com sucesso!');
+        router.navigate("/conectar/tutorialC");
+      } catch(error: any) {
+        alert('Erro ao criar a Criança' + error.message)
+      }
+      
+    } else {
+      alert('Por favor, preencha todos os campos.');
+    }
+  }
 
   return (
     <View
@@ -85,9 +103,8 @@ export default function TelaPerfilCrianca() {
                 fontWeight: "bold",
               }}
             >
-              data de nascimento
-            </Text>{" "}
-            da criança?
+              data de nascimento 
+            </Text> da criança?
           </Text>
         </View>
         <View style={{marginBottom: -10}}>
@@ -103,10 +120,8 @@ export default function TelaPerfilCrianca() {
           />
         </View>
         <InputDOB date={date} setDate={setDate} />
-
-        <Link href={"/conectar/tutorialC"}>
-          <ButtonConfirmar text="CONFIRMAR" backgroundColor="#f480d4" />
-        </Link>
+          <ButtonConfirmar text="CONFIRMAR" backgroundColor="#f480d4" onPress={handleRegister}/>
+        
       </View>
     </View>
   );

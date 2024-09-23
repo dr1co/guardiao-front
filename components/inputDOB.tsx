@@ -11,7 +11,7 @@ import DatePicker from 'react-native-modern-datepicker';
 import { format } from 'date-fns';
 //import { ptBR } from 'date-fns/locale';
 
-// VERIFICAR SE É < 18 e > 6
+// VERIFICAR SE É < 18 
 
 const styles = StyleSheet.create({
   centeredView: {
@@ -46,17 +46,25 @@ interface DOBProps {
 export default function inputDOB(props: DOBProps) {
 
   const [open, setOpen] = useState(false); // open and colses the modal
-  const [textDate, setTextDate] = useState("Selecione a data de nascimento.")
+  const [textDate, setTextDate] = useState("Selecione a data de nascimento.");
 
   function handleOnPress() {
     setOpen(!open);
   }
 
   function handleOnChange(propDate: string) {
-    props.setDate(propDate);
+    const birthDate = new Date(propDate);
+    const today = new Date();
+    const age = today.getFullYear() - birthDate.getFullYear();
+    const isUnder18 = age < 18;
 
-    const formattedDate = format(new Date(propDate), 'dd/MM/yyyy');
-    setTextDate(formattedDate);
+    if (isUnder18) {
+      props.setDate(propDate);
+      const formattedDate = format(new Date(propDate), 'dd/MM/yyyy');
+      setTextDate(formattedDate);
+    } else {
+        alert('A data de nascimento deve ser de até 17 anos.');
+    }
   }
 
   return (

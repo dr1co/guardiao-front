@@ -11,7 +11,7 @@ const api = axios.create({
   
 });
 
-const createRegister = async (data) => {
+const createUserRegister = async (data) => {
   try {
     const response = await api.post('/user/register', data);
     return response.data;
@@ -20,7 +20,16 @@ const createRegister = async (data) => {
   }
 }
 
-export {createRegister};
+const createChildRegister = async (data) => {
+  try {
+    const response = await api.post('/child/register', data);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export {createUserRegister, createChildRegister};
 
 /* 
 import axios from 'axios';
