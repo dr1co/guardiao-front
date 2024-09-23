@@ -29,7 +29,16 @@ const createChildRegister = async (data) => {
   }
 }
 
-export {createUserRegister, createChildRegister};
+const readUserLogin = async (data) => {
+  try {
+    const response = await api.post('/user/login', data);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export {createUserRegister, createChildRegister, readUserLogin};
 
 /* 
 import axios from 'axios';
