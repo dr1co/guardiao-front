@@ -4,7 +4,7 @@ import ButtonGeral from "@/components/ButtonGeral";
 import ButtonAlertas from "@/components/ButtonAlertas";
 import MenuBar from "@/components/MenuBar";
 
-export default function TelaInicio() {
+export default function TelaAlertas() {
   const { width, height } = useWindowDimensions();
 
   return (

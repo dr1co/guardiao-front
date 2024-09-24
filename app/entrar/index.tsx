@@ -4,6 +4,7 @@ import {
   StyleSheet,
   Image,
   TouchableOpacity,
+  Modal,
   Pressable,
   useWindowDimensions,
 } from "react-native";
@@ -13,6 +14,7 @@ import InputPassword from "@/components/InputPassword";
 import { useState } from "react";
 import { readUserLogin } from "@/api/axiosInstance";
 import { router } from "expo-router";
+import ButtonConfirmar from "@/components/ButtonGeral";
 
 const styles = StyleSheet.create({
   screen: {
@@ -146,9 +148,34 @@ const styles = StyleSheet.create({
     color: "#8093F4",
     textDecorationLine: "underline",
   },
+  modal: {
+    backgroundColor: "#ffe1e1",
+    borderRadius: 20,
+    padding: 20,
+    alignItems: "center",
+    justifyContent: "center",
+    
+  },
+  modalTitle: {
+    fontSize: 24,
+    marginBottom: 20,
+    color: "#F48080",
+    fontWeight: 'bold',
+    fontFamily: "IBM Plex Sans, sans-serif",
+  },
+  modalSubtitle: {
+    fontSize: 14,
+    marginBottom: 20,
+    color: "#888888",
+    fontFamily: "IBM Plex Sans, sans-serif",
+    width: 332,
+    lineHeight: 20
+
+  }
 });
 
 export default function Index() {
+  const [showModal, setModal] = useState(false);
   const { width, height } = useWindowDimensions();
   const [email, setEmail] = useState<string>();
   const [password, setPassword] = useState<string>();
@@ -162,15 +189,13 @@ export default function Index() {
         const result = await readUserLogin(data);
         alert("Login efetuado com sucesso!");
         router.navigate("/conectar/inicio");
-
-
       } catch (error: any) {
-        alert("Erro ao efetuar login: " + error.message); 
+        alert("Erro ao efetuar login: " + error.message);
       }
     } else {
       alert("Por favor, preencha todos os campos.");
     }
-  }
+  };
 
   return (
     <View style={{ ...styles.screen, width, height }}>
@@ -213,14 +238,46 @@ export default function Index() {
             setVar={setPassword}
           />
 
-          <TouchableOpacity>
+          <Pressable onPress={() => setModal(!showModal)}>
             <Text style={styles.inputText}>Esqueceu a senha?</Text>
-          </TouchableOpacity>
+          </Pressable>
+
+          <Modal visible={showModal}>
+            <View style={{...styles.modal, width: width, height: height, display: "flex"}}>
+              <Pressable onPress={() => setModal(!showModal)} style={{position: "absolute", top: 30, left: 40}}>
+                <Image source={require("@/assets/images/arrow_left_orange.png")}/>
+              </Pressable>
+              <View style={{backgroundColor: "white", borderRadius: 50, padding: 10, marginBottom: 20, borderWidth: 3, borderColor: "#f48080"}}>
+              <Image source={require("@/assets/images/password.png")} style={{width: 60, height: 60}}/>
+
+
+              </View>
+              <Text style={styles.modalTitle}>Esqueceu a senha?</Text>
+              <Text style={styles.modalSubtitle}>
+                Um link será enviado para o seu e-mail para você alterar a sua
+                senha.
+              </Text>
+              <InputEmail
+                imagePath={require("@/assets/images/mail.svg")}
+                placeholder="Digite o seu e-mail"
+                borderBottomColor="#f48080"
+                placeholderTextColor="#f48080"
+                setVar={setEmail}
+              />
+              <Pressable style={{ ...styles.button, backgroundColor: "#F48080" }}>
+              <Text style={styles.buttonText}>ENVIAR</Text>
+            </Pressable>
+            </View>
+            
+          </Modal>
         </View>
 
-          <Pressable style={{ ...styles.button, backgroundColor: "#F48080" }} onPress={handleRegister}>
-            <Text style={styles.buttonText}> ENTRAR </Text>
-          </Pressable>
+        <Pressable
+          style={{ ...styles.button, backgroundColor: "#F48080" }}
+          onPress={handleRegister}
+        >
+          <Text style={styles.buttonText}> ENTRAR </Text>
+        </Pressable>
 
         <TouchableOpacity style={styles.backButton}>
           <Link style={styles.linkContainer} href="/">
