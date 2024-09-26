@@ -38,7 +38,17 @@ const readUserLogin = async (data) => {
   }
 }
 
-export {createUserRegister, createChildRegister, readUserLogin};
+const readForgotPassword = async (data) => {
+  try {
+    const response = await api.post('/user/forgot-password', data);
+    return response.data;
+
+  } catch (error) {
+    throw error;
+  }
+}
+
+export { createUserRegister, createChildRegister, readUserLogin, readForgotPassword };
 
 /* 
 import axios from 'axios';
